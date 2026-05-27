@@ -1,0 +1,9 @@
+- title: 即刻短文
+  subTitle: 记录生活的碎片
+  tips: 随时随地，分享生活
+  buttonText: 关于我
+  buttonLink: /about/
+  limit: 30
+  home_essay: true
+  top_background:
+  essay_list: []
