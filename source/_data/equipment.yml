@@ -1,0 +1,23 @@
+- class_name: 历史设备
+  description: 实物装备推荐
+  tip: 一起享受科技带来的乐趣
+  top_background: https://bu.dusays.com/2023/07/05/64a4c38842b7a.webp
+  good_things:
+    - title: 生产力
+      description: 提升自己生产效率的硬件设备
+      equipment_list:
+        - name: ROG 幻14 2022
+          specification: R7 6800SH RX6700S 24G / 1TB
+          description: 小巧的14寸性能本，到现在也十分够用。音质清脆通透，是我工作学习的好帮手
+          image: https://picx.zhimg.com/70/v2-5658ff6be78c4cce784bab790945132d_1440w.avis?source=172ae18b&biz_taghttps://consumer.huawei.com/hk/offer/huawei-tablets/matepad-11-5-s-
+          link: https://rog.asus.com.cn/
+        - name: 华为MatePad 11.5s
+          specification: 深空灰 / 128G
+          description: 打完华为ICT的奖品 虽然性能一般 不过屏幕素质很高，看番很爽
+          image: https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/ecommerce/my/2026newlaunch/mar/salinger/pcp/features/MatePad--11.5-S_Web_1.jpg
+          link: https://consumer.huawei.com/hk/offer/huawei-tablets/matepad-11-5-s-2026-buy/
+        - name: Xiaomi13
+          specification: 白色 / 256G
+          description: 小米高端真成了的一代。8Gen2+小屏旗舰 最不后悔入的手机
+          image: https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1670745529.34386413.png
+          link: https://www.mi.com/xiaomi-13

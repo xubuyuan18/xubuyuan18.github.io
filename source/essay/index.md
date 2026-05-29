@@ -1,8 +1,0 @@
----
-title: 即刻短文
-date: 2025-05-26 22:06:17
-comments: true
-aside: false
-top_img: false
-type: essay
----

@@ -1,15 +1,19 @@
 menu:
-  文章:
-    隧道: /archives/ || anzhiyu-icon-box-archive
-    分类: /categories/ || anzhiyu-icon-shapes
-    标签: /tags/ || anzhiyu-icon-tags
+  #文章:
+  归档: /archives/ || anzhiyu-icon-box-archive
+  分类: /categories/ || anzhiyu-icon-shapes
+  标签: /tags/ || anzhiyu-icon-tags
 
-  友链:
-    友人帐: /link/ || anzhiyu-icon-link
+  #友链:
+  #友人帐: /link/ || anzhiyu-icon-link
 
-  关于:
-    关于本人: /about/ || anzhiyu-icon-paper-plane
-    闲言碎语: /essay/ || anzhiyu-icon-lightbulb
+  我的:
+    追番列表: /bangumis/ || anzhiyu-icon-bilibili
+    装备列表: /equipment/ || anzhiyu-icon-keyboard
+  #关于:
+  #关于本人: /about/ || anzhiyu-icon-paper-plane
+  #闲言碎语: /essay/ || anzhiyu-icon-lightbulb
+  随便逛逛: javascript:toRandomPost() || anzhiyu-icon-shoe-prints1
 
 # nav相关配置
 nav:
@@ -17,29 +21,28 @@ nav:
   travelling: false
   clock: true
   menu:
-    - title: 服务
+    - title: 相关站点
       item:
+        - name: OpenList
+          link: http://File.xubuyuan.top
         - name: 1Panel
-          link: http://1p.xubuyuan.top/
-          icon: /img/favicon.ico
-        - name: Hermes
-          link: http://agent.xubuyuan.top/
-          icon: /img/favicon.ico
-        - name: Note
-          link: http://note.xubuyuan.top/
-          icon: /img/favicon.ico
-        - name: 3Xui
+          link: http://1p.xubuyuan.top
+        - name: Agent
+          link: http://agent.xubuyuan.top
+        - name: 3XUI
           link: http://38.244.14.227:20344
-          icon: /img/favicon.ico
-    - title: 项目
+        - name: Obsidian
+          link: http://note.xubuyuan.top
+
+    - title: 我的项目
       item:
         - name: DMS-Lyrics
           link: https://github.com/xubuyuan18/dms-plugin-Lyrics
-          icon: /img/favicon.ico
+
 # mourn （哀悼日，指定日期网站简单变灰，不包括滚动条）
 # 注意： 仅网站首页变灰，其他页面正常显示
 mourn:
-  enable: false
+  enable: true
   days: [4-5, 5-12, 7-7, 9-18, 12-13]
 
 # Code Blocks (代码相关)
@@ -65,18 +68,19 @@ copy:
 # formal:
 #   name: link || icon
 social:
-  Github: https://github.com/xubuyuan18 || anzhiyu-icon-github
+  Github: https://github.com/xubuyuan18|| anzhiyu-icon-github
   BiliBili: https://space.bilibili.com/441828893 || anzhiyu-icon-bilibili
 
 # 作者卡片 状态
 author_status:
-  enable: false
+  enable: true
   # 可以是任何图片，建议放表情包或者emoji图片，效果都很好，[表情包速查](https://emotion.xiaokang.me/)
   statusImg: "https://bu.dusays.com/2023/08/24/64e6ce9c507bb.png"
   skills:
     - 🤖️ 数码科技爱好者
     - 🔍 分享与热心帮助
-    - 🏃 脚踏实地行动派
+    - 🏠 智能家居小能手
+    - 🔨 设计开发一条龙
 
 # search (搜索)
 # --------------------------------------
@@ -129,7 +133,7 @@ katex:
 # --------------------------------------
 
 # Favicon（网站图标）
-favicon: /img/avatar.jpg
+favicon: /favicon.ico
 
 # Avatar (头像)
 avatar:
@@ -140,10 +144,11 @@ avatar:
 disable_top_img: false
 
 # The banner image of home page
-index_img: "background: url('/images/top_bg.png') top / cover no-repeat"
+#index_img: false # "background: url() top / cover no-repeat"
+index_img: "background: url(/img/bakgourd.png) top / cover no-repeat"
 
 # If the banner of page not setting, it will show the top_img
-default_top_img: false
+default_top_img: https://t.alcy.cc/pc
 
 cover:
   # display the cover or not (是否显示文章封面)
@@ -155,7 +160,8 @@ cover:
   position: left
   # When cover is not set, the default cover is displayed (当没有设置cover时，默认的封面显示)
   default_cover:
-    - https://t.alcy.cc/ycy
+    https://t.alcy.cc/pc
+    # - /img/default_cover.jpg
 
 # Replace Broken Images (替换无法显示的图片)
 error_img:
@@ -217,19 +223,19 @@ anchor: false
 # toc (目录)
 toc:
   post: true
-  page: true
+  page: false
   number: true
-  expand: true
+  expand: false
   style_simple: false # for post
 
 post_copyright:
   enable: true
   decode: false
   author_href:
-  location: 长沙
+  location: 大连
   license: CC BY-NC-SA 4.0
   license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
-  avatarSinks: false # hover时头像下沉
+  avatarSinks: true # hover时头像下沉
   copyright_author_img_back:
   copyright_author_img_front:
   copyright_author_link: /
@@ -261,7 +267,7 @@ post_edit: # 目前仅可选择一个平台在线编辑
 # Related Articles
 related_post:
   enable: true
-  limit: 2 # Number of posts displayed
+  limit: 6 # Number of posts displayed
   date_type: created # or created or updated 文章日期显示创建日或者更新日
 
 # figcaption (图片描述文字)
@@ -274,11 +280,11 @@ photofigcaption: false
 # 3: 只有下一篇，并且只在文章滚动到评论区时显示下一篇文章(旧文章)
 # 4: 只有下一篇，并且只在文章滚动到评论区时显示下一篇文章(旧文章) 显示图片cover
 # false: disable pagination
-post_pagination: 1
+post_pagination: 2
 
 # Displays outdated notice for a post (文章过期提醒)
 noticeOutdate:
-  enable: true
+  enable: false
   style: flat # style: simple/flat
   limit_day: 365 # When will it be shown
   position: top # position: top/bottom
@@ -292,13 +298,13 @@ noticeOutdate:
 # https://github.com/overtrue/share.js
 sharejs:
   enable: true
-  sites: facebook,twitter,weibo,qq
+  sites: twitter,wechat,weibo,qq
 
 # AddToAny
 # https://www.addtoany.com/
 addtoany:
   enable: false
-  item: facebook,twitter,wechat,sina_weibo,email,copy_link
+  item: twitter,wechat,sina_weibo,email,copy_link
 
 # Comments System
 # --------------------------------------
@@ -322,7 +328,7 @@ valine:
   pageSize: 10 # comment list page size
   avatar: mp # gravatar style https://valine.js.org/#/avatar
   lang: zh-CN # i18n: zh-CN/zh-TW/en/ja
-  placeholder: 填写QQ邮箱就会使用QQ头像喔\x7e. # valine comment input placeholder (like: Please leave your footprints)
+  placeholder: 填写QQ邮箱就会使用QQ头像喔~. # valine comment input placeholder (like: Please leave your footprints)
   guest_info: nick,mail,link # valine comment header info (nick/mail/link)
   recordIP: false # Record reviewer IP
   serverURLs: # This configuration is suitable for domestic custom domain name users, overseas version will be automatically detected (no need to manually fill in)
@@ -419,15 +425,15 @@ crisp:
 footer:
   owner:
     enable: true
-    since: 2024
+    since: 2020
   custom_text:
   runtime:
-    enable: true
+    enable: false
     launch_time: 06/01/2024 00:00:00 # 网站上线时间
-    work_img: https://img.shields.io/badge/许步鸢-上班摸鱼中-orange?style=flat&logo=appveyor
-    #work_description: 距离月入25k也就还差一个大佬带我~
-    offduty_img: https://img.shields.io/badge/许步鸢-下班啦-brightgreen?style=flat&logo=appveyor
-    offduty_description: 下班了就该开开心心的玩耍，嘿嘿~
+    #work_img: https://npm.elemecdn.com/anzhiyu-blog@2.0.4/img/badge/安知鱼-上班摸鱼中.svg
+    #work_description: 困啊
+    #offduty_img: https://npm.elemecdn.com/anzhiyu-blog@2.0.4/img/badge/安知鱼-下班啦.svg
+    #offduty_description: 累啊
   # 徽标部分配置项 https://shields.io/
   # https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&logo=jsDelivr
   bdageitem:
@@ -435,16 +441,16 @@ footer:
     list:
       - link: https://hexo.io/ #徽标指向网站链接
         shields: https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Frame-Hexo.svg #徽标API
-        message: 博客框架为Hexo_v7.0.1 #徽标提示语
-      - link: https://github.com/xubuyuan18
-        shields: https://img.shields.io/badge/GitHub-xubuyuan18-181717?logo=github
-        message: 我的GitHub主页
-      - link: https://cloud.tencent.com/
-        shields: https://img.shields.io/badge/CDN-腾讯云-3693F3
-        message: 本站使用腾讯云为静态资源提供CDN加速
-      - link: https://github.com/
-        shields: https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Source-Github.svg
-        message: 本站项目由Github托管
+        message: 博客框架为Hexo_v8.1.2 #徽标提示语
+      - link: https://hexo.anheyu.com/
+        shields: https://npm.elemecdn.com/anzhiyu-theme-static@1.0.9/img/Theme-AnZhiYu-2E67D3.svg
+        message: 本站使用AnZhiYu主题
+      # - link: https://www.dogecloud.com/
+      #   shields: https://npm.elemecdn.com/anzhiyu-blog@2.2.0/img/badge/CDN-多吉云-3693F3.svg
+      #   message: 本站使用多吉云为静态资源提供CDN加速
+      # - link: https://github.com/
+      #   shields: https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Source-Github.svg
+      #   message: 本站项目由Github托管
       - link: http://creativecommons.org/licenses/by-nc-sa/4.0/
         shields: https://npm.elemecdn.com/anzhiyu-blog@2.2.0/img/badge/Copyright-BY-NC-SA.svg
         message: 本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可
@@ -453,15 +459,30 @@ footer:
     centerImg:
     left:
       - title: email
-        link: mailto:luoyuyan1117@outlook.com
+        link: mailto:3432150240@qq.com
         icon: anzhiyu-icon-envelope
-      - title: RSS
-        link: atom.xml
-        icon: anzhiyu-icon-rss
+      # - title: 微博
+      #   link: https://weibo.com/u/6378063631
+      #   icon: anzhiyu-icon-weibo
+      - title: X
+        link: https://x.com/Nefelibata0718
+        icon: anzhiyu-icon-dove
+      # - title: RSS
+      #   link: atom.xml
+      #   icon: anzhiyu-icon-rss
     right:
       - title: Github
         link: https://github.com/xubuyuan18
         icon: anzhiyu-icon-github
+      - title: Bilibili
+        link: https://space.bilibili.com/441828893
+        icon: anzhiyu-icon-bilibili
+      #- title: 抖音
+      #  link: https://v.douyin.com/DwCpMEy/
+      #  icon: anzhiyu-icon-tiktok
+      # - title: CC
+      #   link: /copyright
+      #   icon: anzhiyu-icon-copyright-line
   list:
     enable: false
     randomFriends: 3
@@ -512,7 +533,7 @@ footer:
       # - link: https://beian.miit.gov.cn/
       #   text: 湘ICP备-xxxxxxx号
     subTitle:
-      enable: false
+      enable: true
       # Typewriter Effect (打字效果)
       effect: true
       # Effect Speed Options (打字效果速度参数)
@@ -527,7 +548,7 @@ footer:
       # source: 2  调用一句网（简体） http://yijuzhan.com/
       # source: 3  调用今日诗词（简体） https://www.jinrishici.com/
       # subtitle 会先显示 source , 再显示 sub 的内容
-      source: 1
+      source: 3
       # 如果关闭打字效果，subtitle 只会显示 sub 的第一行文字
       sub:
         # - 生活明朗&#44; 万物可爱&#44; 人间值得&#44; 未来可期.
@@ -685,7 +706,7 @@ activate_power_mode:
 
 # Mouse click effects: fireworks (鼠标点击效果: 烟火特效)
 fireworks:
-  enable: false
+  enable: true
   zIndex: 9999 # -1 or 9999
   mobile: false
 
@@ -707,7 +728,7 @@ ClickShowText:
 
 # Default display mode (网站默认的显示模式)
 # light (default) / dark
-display_mode: light
+display_mode: dark
 
 # Beautify (美化页面显示)
 beautify:
@@ -720,15 +741,15 @@ beautify:
 # Don't modify the following settings unless you know how they work (非必要不要修改)
 font:
   global-font-size: 16px
-  code-font-size: null
-  font-family: HarmonyOS Sans, PingFang SC, Microsoft YaHei, sans-serif
-  code-font-family: Consolas, Menlo, Monaco, monospace
+  code-font-size:
+  font-family:
+  code-font-family: consolas, Menlo, "PingFang SC", "Microsoft JhengHei", "Microsoft YaHei", sans-serif
 
 # Font settings for the site title and site subtitle
 # 左上角网站名字 主页居中网站名字
 blog_title_font:
-  font_link: null
-  font-family: HarmonyOS Sans, PingFang SC, Microsoft YaHei, sans-serif
+  font_link:
+  font-family: PingFang SC, 'Hiragino Sans GB', 'Microsoft JhengHei', 'Microsoft YaHei', sans-serif
 
 # The setting of divider icon (水平分隔线图标设置)
 hr_icon:
@@ -738,7 +759,7 @@ hr_icon:
 
 # the subtitle on homepage (主页subtitle)
 subtitle:
-  enable: true
+  enable: false
   # Typewriter Effect (打字效果)
   effect: true
   # Effect Speed Options (打字效果速度参数)
@@ -753,7 +774,7 @@ subtitle:
   # source: 2  调用一句网（简体） http://yijuzhan.com/
   # source: 3  调用今日诗词（简体） https://www.jinrishici.com/
   # subtitle 会先显示 source , 再显示 sub 的内容
-  source: 1
+  source: 3
   # 如果关闭打字效果，subtitle 只会显示 sub 的第一行文字
   sub:
     # - 生活明朗&#44;万物可爱&#44;人间值得&#44;未来可期.
@@ -833,8 +854,8 @@ busuanzi:
   site_pv: false
   page_pv: false
 
-# Time difference between publish date and now (网页运行时间)
-# Formal: Month/Day/Year Time or Year/Month/Day Time
+#Time difference between publish date and now (网页运行时间)
+#Formal: Month/Day/Year Time or Year/Month/Day Time
 runtimeshow:
   enable: true
   publish_date: 6/1/2024 00:00:00
@@ -931,7 +952,7 @@ fancybox: true
 # mermaid
 # see https://github.com/mermaid-js/mermaid
 mermaid:
-  enable: true
+  enable: false
   # built-in themes: default/forest/dark/neutral
   theme:
     light: default
@@ -1013,8 +1034,8 @@ pwa:
   mask_icon: /img/siteicon/apple-icon-180.png
   apple_touch_icon: /img/siteicon/apple-icon-180.png
   bookmark_icon: /img/siteicon/apple-icon-180.png
-  favicon_32_32: /img/avatar.jpg
-  favicon_16_16: /img/avatar.jpg
+  favicon_32_32: /img/siteicon/32.png
+  favicon_16_16: /img/siteicon/16.png
 
 # Open graph meta tags
 # https://developers.facebook.com/docs/sharing/webmasters/
@@ -1026,41 +1047,36 @@ css_prefix: true
 # 首页顶部相关配置
 home_top:
   enable: true # 开关
-  timemode: date #date/updated
-  title: 生活明朗
-  subTitle: 万物可爱。
-  siteText: anheyu.com
+  timemode: update #date/updated
+  title: 平生素有烟霞志
+  subTitle: 奈何未得水云身！
+  siteText: 许步鸢
   category:
-    - name: 1Panel
-      path: http://1p.xubuyuan.top/
+    - name: Linux
+      path: /categories/Linux/
       shadow: var(--anzhiyu-shadow-blue)
       class: blue
-      icon: anzhiyu-icon-box-archiv
-    - name: Hermes
-      path: http://agent.xubuyuan.top/
+      icon: anzhiyu-icon-dove
+    - name: 随笔
+      path: /categories/随笔/
       shadow: var(--anzhiyu-shadow-red)
       class: red
-      icon: anzhiyu-icon-rocket
-    - name: Note
-      path: http://note.xubuyuan.top/
+      icon: anzhiyu-icon-fire
+    - name: AI
+      path: /categories/AI/
       shadow: var(--anzhiyu-shadow-green)
       class: green
       icon: anzhiyu-icon-book
-    - name: 3Xui
-      path: http://38.244.14.227:20344
-      shadow: var(--anzhiyu-shadow-yellow)
-      class: yellow
-      icon: anzhiyu-icon-radio
   default_descr: 再怎么看我也不知道怎么描述它的啦！
   swiper:
     enable: false
     swiper_css: https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css #swiper css依赖
     swiper_js: https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.js #swiper js依赖
   banner:
-    tips: 我的主页
-    title: GitHub
-    image: /images/today_card_banner.jpg
-    link: https://github.com/xubuyuan18
+    tips: 青鸢之停
+    title: 欢迎来到我的站点
+    image: https://t.alcy.cc/pc
+    link: #https://docs.anheyu.com/
 
 # 朋友圈配置
 friends_vue:
@@ -1076,7 +1092,7 @@ universe:
 
 # 页面卡片顶部气泡升起效果
 bubble:
-  enable: false
+  enable: true
 
 #  控制台打印信息
 console:
@@ -1102,8 +1118,8 @@ umami:
 # 标签卖萌
 diytitle:
   enable: true
-  leaveTitle: w(ﾟДﾟ)w 不要走！再看看嘛！
-  backTitle: ♪(^∇^*)欢迎肥来！
+  leaveTitle: 不要走！再看看嘛！
+  backTitle: ♪(^∇^*)欢迎回来！
 
 # 留言弹幕配置
 comment_barrage_config:
@@ -1125,7 +1141,7 @@ nav_music:
   id: 2792934213
   server: netease
   volume: 0.7 # 默认音量
-  all_playlist: https://y.qq.com/n/ryqq/playlist/8802438608
+  all_playlist: https://music.163.com/#/playlist?id=2792934213
 
 # 路径为 /music 的音乐页面默认加载的歌单 1. nav_music 2. custom
 music_page_default: nav_music
@@ -1149,34 +1165,34 @@ greetingBox:
   enable: false #开启后必须配置下面的list对应的时间段，不然会出现小白条
   default: 晚上好👋
   list:
-    # - greeting: 晚安😴
-    #   startTime: 0
-    #   endTime: 5
-    # - greeting: 早上好鸭👋, 祝你一天好心情！
-    #   startTime: 6
-    #   endTime: 9
-    # - greeting: 上午好👋, 状态很好，鼓励一下～
-    #   startTime: 10
-    #   endTime: 10
-    # - greeting: 11点多啦, 在坚持一下就吃饭啦～
-    #   startTime: 11
-    #   endTime: 11
-    # - greeting: 午安👋, 宝贝
-    #   startTime: 12
-    #   endTime: 14
-    # - greeting: 🌈充实的一天辛苦啦！
-    #   startTime: 14
-    #   endTime: 18
-    # - greeting: 19点喽, 奖励一顿丰盛的大餐吧🍔。
-    #   startTime: 19
-    #   endTime: 19
-    # - greeting: 晚上好👋, 在属于自己的时间好好放松😌~
-    #   startTime: 20
-    #   endTime: 24
+    - greeting: 晚安😴
+      startTime: 0
+      endTime: 5
+    - greeting: 早上好鸭👋, 祝你一天好心情！
+      startTime: 6
+      endTime: 9
+    - greeting: 上午好👋, 状态很好，鼓励一下～
+      startTime: 10
+      endTime: 10
+    - greeting: 11点多啦, 在坚持一下就吃饭啦～
+      startTime: 11
+      endTime: 11
+    - greeting: 午安👋, 宝贝
+      startTime: 12
+      endTime: 14
+    - greeting: 🌈充实的一天辛苦啦！
+      startTime: 14
+      endTime: 18
+    - greeting: 19点喽, 奖励一顿丰盛的大餐吧🍔。
+      startTime: 19
+      endTime: 19
+    - greeting: 晚上好👋, 在属于自己的时间好好放松😌~
+      startTime: 20
+      endTime: 24
 
 # 文章顶部ai摘要
 post_head_ai_description:
-  enable: true
+  enable: false
   gptName: AnZhiYu
   mode: local # 默认模式 可选值: tianli/local
   switchBtn: false # 可以配置是否显示切换按钮 以切换tianli/local
@@ -1217,13 +1233,13 @@ rightClickMenu:
 
 # 首页随便逛逛people模式 而非技能点模式，关闭后为技能点模式需要配置creativity.yml
 peoplecanvas:
-  enable: true
+  enable: false
   img: https://upload-bbs.miyoushe.com/upload/2024/07/27/125766904/ba62475f396df9de3316a08ed9e65d86_5680958632268053399..png
 
 # 动效
 dynamicEffect:
   postTopWave: true # 文章顶部波浪效果
-  postTopRollZoomInfo: false # 文章顶部滚动时缩放
+  postTopRollZoomInfo: true # 文章顶部滚动时缩放
   pageCommentsRollZoom: false # 非文章页面评论滚动时缩放显示（仅仅Twikoo生效）
 
 # Inject
@@ -1231,8 +1247,6 @@ dynamicEffect:
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 inject:
   head:
-    - <link rel="stylesheet" href="/css/harmonyos.css">
-    - <style>a.categoryButton.yellow{background:linear-gradient(to right,#ffd93e,#ff9a3c);background-size:200%}[data-theme="dark"] a.categoryButton.yellow{background:linear-gradient(to right,#d4a620,#e67e22);background-size:200%}#aside-content .avatar-img img{border-radius:50%}</style>
     # 自定义css
     # - <link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'">
 
