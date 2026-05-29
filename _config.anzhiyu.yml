@@ -527,7 +527,7 @@ footer:
       link: /copyright
     linkList:
       - link: https://github.com/anzhiyu-c/hexo-theme-anzhiyu
-        text: 主题
+        text: 本站主题
       # - link: https://image.anheyu.com
       #   text: 图床
       # - link: https://beian.miit.gov.cn/
@@ -1073,7 +1073,7 @@ home_top:
     swiper_css: https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css #swiper css依赖
     swiper_js: https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.js #swiper js依赖
   banner:
-    tips: 青鸢之停
+    tips: 青鸢之亭
     title: 欢迎来到我的站点
     image: https://t.alcy.cc/pc
     link: #https://docs.anheyu.com/
