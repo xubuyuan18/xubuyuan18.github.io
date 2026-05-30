@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>HEXO折腾日记</title>
+      <link href="/2026/05/30/HEXO%E6%8A%98%E8%85%BE%E6%97%A5%E8%AE%B0/"/>
+      <url>/2026/05/30/HEXO%E6%8A%98%E8%85%BE%E6%97%A5%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[<p>halo博客的资源占用好高啊<br>一下子就要占用500多M内存<br>没办法只能想起我的老朋友hexo 了<br>说起来当时大一的时候整过一次了但是因为每次都需要构建生成文章太麻烦放弃了</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随笔 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 折腾 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Linuxn娘守护日记</title>
       <link href="/2025/05/30/Linuxn%E5%A8%98%E5%AE%88%E6%8A%A4%E6%97%A5%E8%AE%B0/"/>
       <url>/2025/05/30/Linuxn%E5%A8%98%E5%AE%88%E6%8A%A4%E6%97%A5%E8%AE%B0/</url>
