@@ -1,0 +1,508 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>HEXO折腾日记 | 青鸢之亭</title><meta name="keywords" content="折腾"><meta name="author" content="许步鸢"><meta name="copyright" content="许步鸢"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#18171d"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="HEXO折腾日记"><meta name="application-name" content="HEXO折腾日记"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#18171d"><meta property="og:type" content="article"><meta property="og:title" content="HEXO折腾日记"><meta property="og:url" content="https://xubuyuan18.github.io/2026/05/30/HEXO%E6%8A%98%E8%85%BE%E6%97%A5%E8%AE%B0/index.html"><meta property="og:site_name" content="青鸢之亭"><meta property="og:description" content="缘起：「VPS 也是会饿的」我的 VPS 是 2 核 4G，装了 MySQL、OpenResty、x-ui、笔记同步等一堆服务之后，可用内存捉襟见肘——装个 WordPress&amp;#x2F;Halo 上来就吞 500MB+，实在养不起。 大一的时候就玩过 Hexo，当时因为每次写完都要手动构建部署，嫌"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://t.alcy.cc/pc?_r_=34adb1dc-1080-becd-b703-de6642c9953d"><meta property="article:author" content="许步鸢"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://t.alcy.cc/pc?_r_=34adb1dc-1080-becd-b703-de6642c9953d"><meta name="description" content="缘起：「VPS 也是会饿的」我的 VPS 是 2 核 4G，装了 MySQL、OpenResty、x-ui、笔记同步等一堆服务之后，可用内存捉襟见肘——装个 WordPress&amp;#x2F;Halo 上来就吞 500MB+，实在养不起。 大一的时候就玩过 Hexo，当时因为每次写完都要手动构建部署，嫌"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="https://xubuyuan18.github.io/2026/05/30/HEXO%E6%8A%98%E8%85%BE%E6%97%A5%E8%AE%B0/"><link rel="preconnect" href="//cdn.cbd.int"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@6.1.6/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: undefined,
+  postHeadAiDescription: undefined,
+  diytitle: {"enable":true,"leaveTitle":"不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎回来！"},
+  LA51: undefined,
+  greetingBox: undefined,
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  music_page_default: "nav_music",
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: {"skills":["🤖️ 数码科技爱好者","🔍 分享与热心帮助","🏠 智能家居小能手","🔨 设计开发一条龙"]},
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: 许步鸢","link":"链接: ","source":"来源: 青鸢之亭","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.2.0/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.2.0/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: '青鸢之亭',
+  title: 'HEXO折腾日记',
+  postAI: '',
+  pageFillDescription: '缘起：「VPS 也是会饿的」, 第一回：宿主之争——从 VPS 搬到 GitHub Pages, 最初的方案, 换方案, 第二回：仓库改名, 第三回：自动化流水线——懒人的胜利, GitHub Actions 自动构建, 跨仓库触发, 第四回：DNS 与 CDN 缓存, 第五回：VPS 大扫除, 第六回：主题配置笔记, anzhiyu 主题, 第七回：GitHub Pages 自定义域名, 配置步骤, HTTPS 证书等待, 子域名隔离, 踩坑记录, 1. YAML front matter 格式, 2. GITHUB_TOKEN 自动注入, 3. 配置修改后重新构建, 4. DNS 传播时间, 后记缘起也是会饿的我的是核装了笔记同步等一堆服务之后可用内存捉襟见肘装个上来就吞实在养不起大一的时候就玩过当时因为每次写完都要手动构建部署嫌麻烦弃了四年后重新捡起来核心目标就一个流程自动化写完即发布全程不碰服务器第一回宿主之争从搬到最初的方案一开始跑在上反代静态文件流程大致是本地写文章到上静态文件听起来没毛病但实际操作中遇到了两个玄学问题抽风开了反而打不开直连能访问但域名国内能打开国外不行中间环节太多排查无从下手端口访问正常但域名不行端口能正常显示页面证明博客本身没问题问题出在网络传输的链路上换方案既然问题出在中间商反向代理那就干脆去掉中间商全球免费原生集成唯一的代价是仓库必须公开反正博客内容本就是公开的无所谓第二回仓库改名要求仓库名必须是用户名于是把改名为改完之后需要同步两处配置更新本地里的也要改原来是忘改的话文章里的所有链接都会别问我怎么知道的第三回自动化流水线懒人的胜利自动构建核心是自动提供的不需要手动创建任何密钥对于同一仓库内部署来说零配置即可跨仓库触发文章源文件在另一个仓库更新后需要通知仓库重新构建用的是的机制仓库调用仓库收到事件跑构建部署到关键调用方仓库需要持有被调用方仓库权限的存在里命名这个一路从旧仓库跟着过来还在用比很多感情都持久全程不需要碰服务器第四回与缓存理论上两者等价实际体验有差异域名更新速度秒更新慢分钟原因是对自定义域名有缓存域则不走这个缓存解决方案三选一不管等几分钟自动刷新前置可以手动刷缓存直接用舍弃自定义域名追求最快更新目前选方案第五回大扫除把从迁走之后系统里还留了不少残骸正在运行的进程的站点配置定时拉取任务下居然还有一整套解压出来的项目文件清理清单配合确认无残留内存多释放了几百第六回主题配置笔记主题主题选了安装后改的字段即可导航栏音乐播放器开启后文章内可嵌入音乐个人建议开了就别关中途改配置容易陷入排查深渊封面图试了三种方式相对路径本地能用部署后可能绝对依赖外部源指向已部署站点最稳定结论写死完整虽然丑但不会背叛你第七回自定义域名配置步骤加记录仓库填上域名证书等待会自动向申请证书需要等几分钟才能签发刚设置完直接访问会报等分钟后恢复正常不用慌这是正常流程子域名隔离的改指向不影响等其他子域名的子域名记录是各自独立的踩坑记录格式必须顶格写前面不能有空格否则文章发出去全是空白页自动注入中由系统自动提供不需要自己创建手动创建同名反而会覆盖系统自带的配置修改后重新构建改完的或后必须重新跑一次构建部署否则里的链接会是错的传播时间修改后传播时长取决于设置快则几分钟慢则几个小时最省心的做法是改完放那第二天自然就好了后记重新捡起的这几天核心感受是真正解决问题的不是复杂的架构而是合适的取舍不用自建省下维护成本和内存不用手动部署省下重复劳动不用纠结自定义域名避免缓存的困扰每个选择都是权衡的结果完',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2026-05-30 21:20:08',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 8.1.2"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="/img/avatar.jpg"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">相关站点</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="http://File.xubuyuan.top" title="OpenList"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="OpenList"/><span class="back-menu-item-text">OpenList</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="http://1p.xubuyuan.top" title="1Panel"><img class="back-menu-item-icon" alt="1Panel"/><span class="back-menu-item-text">1Panel</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="http://agent.xubuyuan.top" title="Agent"><img class="back-menu-item-icon" alt="Agent"/><span class="back-menu-item-text">Agent</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="http://38.244.14.227:20344" title="3XUI"><img class="back-menu-item-icon" alt="3XUI"/><span class="back-menu-item-text">3XUI</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="http://note.xubuyuan.top" title="Obsidian"><img class="back-menu-item-icon" alt="Obsidian"/><span class="back-menu-item-text">Obsidian</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">我的项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://github.com/xubuyuan18/dms-plugin-Lyrics" title="DMS-Lyrics"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="DMS-Lyrics"/><span class="back-menu-item-text">DMS-Lyrics</span></a></div></div></div></div><a id="site-name" href="/" accesskey="h"><div class="title">青鸢之亭</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a><div id="he-plugin-simple"></div><script>var WIDGET = {
+  "CONFIG": {
+    "modules": "0124",
+    "background": "2",
+    "tmpColor": "FFFFFF",
+    "tmpSize": "16",
+    "cityColor": "FFFFFF",
+    "citySize": "16",
+    "aqiColor": "E8D87B",
+    "aqiSize": "16",
+    "weatherIconSize": "24",
+    "alertIconSize": "18",
+    "padding": "10px 10px 10px 10px",
+    "shadow": "0",
+    "language": "auto",
+    "borderRadius": "20",
+    "fixed": "true",
+    "vertical": "top",
+    "horizontal": "left",
+    "left": "20",
+    "top": "7.1",
+    "key": "df245676fb434a0691ead1c63341cd94"
+  }
+}
+</script><link rel="stylesheet" href="https://widget.qweather.net/simple/static/css/he-simple.css?v=1.4.0"/><script src="https://widget.qweather.net/simple/static/js/he-simple.js?v=1.4.0"></script></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/archives/"><span> 归档</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/categories/"><span> 分类</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/tags/"><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番列表</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/equipment/"><i class="anzhiyufont anzhiyu-icon-keyboard faa-tada" style="font-size: 0.9em;"></i><span> 装备列表</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:toRandomPost()"><span> 随便逛逛</span></a></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍" accesskey="s"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" alt="微信" src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/note/" style="font-size: 1.05rem;">note<sup>1</sup></a><a href="/tags/%E6%8A%98%E8%85%BE/" style="font-size: 1.05rem;">折腾<sup>1</sup></a><a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 1.05rem;">笔记<sup>2</sup></a><a href="/tags/%E9%9A%8F%E6%9C%BA/" style="font-size: 1.05rem;">随机<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2026/05/"><span class="card-archive-list-date">五月 2026</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/05/"><span class="card-archive-list-date">五月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/1970/01/"><span class="card-archive-list-date">一月 1970</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url">随笔</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E6%8A%98%E8%85%BE/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>折腾</span></a></span></div></div><h1 class="post-title" itemprop="name headline">HEXO折腾日记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2026-05-30T02:38:09.000Z" title="发表于 2026-05-30 10:38:09">2026-05-30</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2026-05-30T13:20:08.164Z" title="更新于 2026-05-30 21:20:08">2026-05-30</time></span></div><div class="meta-secondline"><span class="post-meta-separator"></span><span class="post-meta-wordcount"><i class="anzhiyufont anzhiyu-icon-file-word post-meta-icon" title="文章字数"></i><span class="post-meta-label" title="文章字数">字数总计:</span><span class="word-count" title="文章字数">1.5k</span><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-clock post-meta-icon" title="阅读时长"></i><span class="post-meta-label" title="阅读时长">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为大连"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>大连</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="https://t.alcy.cc/pc?_r_=34adb1dc-1080-becd-b703-de6642c9953d"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="https://xubuyuan18.github.io/2026/05/30/HEXO%E6%8A%98%E8%85%BE%E6%97%A5%E8%AE%B0/"><header><a class="post-meta-categories" href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url">随笔</a><a href="/tags/%E6%8A%98%E8%85%BE/" tabindex="-1" itemprop="url">折腾</a><h1 id="CrawlerTitle" itemprop="name headline">HEXO折腾日记</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">许步鸢</span><time itemprop="dateCreated datePublished" datetime="2026-05-30T02:38:09.000Z" title="发表于 2026-05-30 10:38:09">2026-05-30</time><time itemprop="dateCreated datePublished" datetime="2026-05-30T13:20:08.164Z" title="更新于 2026-05-30 21:20:08">2026-05-30</time></header><h2 id="缘起：「VPS-也是会饿的」"><a href="#缘起：「VPS-也是会饿的」" class="headerlink" title="缘起：「VPS 也是会饿的」"></a>缘起：「VPS 也是会饿的」</h2><p>我的 VPS 是 2 核 4G，装了 MySQL、OpenResty、x-ui、笔记同步等一堆服务之后，可用内存捉襟见肘——装个 WordPress&#x2F;Halo 上来就吞 500MB+，实在养不起。</p>
+<p>大一的时候就玩过 Hexo，当时因为每次写完都要手动构建部署，嫌麻烦弃了。四年后重新捡起来，核心目标就一个：<strong>流程自动化，写完即发布，全程不碰服务器。</strong></p>
+<hr>
+<h2 id="第一回：宿主之争——从-VPS-搬到-GitHub-Pages"><a href="#第一回：宿主之争——从-VPS-搬到-GitHub-Pages" class="headerlink" title="第一回：宿主之争——从 VPS 搬到 GitHub Pages"></a>第一回：宿主之争——从 VPS 搬到 GitHub Pages</h2><h3 id="最初的方案"><a href="#最初的方案" class="headerlink" title="最初的方案"></a>最初的方案</h3><p>一开始 Hexo 跑在 VPS 上，OpenResty 反代静态文件，流程大致是：</p>
+<ol>
+<li>本地写文章 → push 到 Git</li>
+<li>VPS 上 pull → <code>hexo generate</code></li>
+<li>nginx  serve 静态文件</li>
+</ol>
+<p>听起来没毛病，但实际操作中遇到了两个玄学问题：</p>
+<p><strong>CDN 抽风：</strong> 开了 CDN 反而打不开，直连 IP 能访问但域名 404，国内能打开国外不行——中间环节太多，排查无从下手。</p>
+<p><strong>端口访问正常但域名不行：</strong> <code>http://VPS_IP:端口</code> 能正常显示页面，证明博客本身没问题，问题出在网络传输的链路上。</p>
+<h3 id="换方案"><a href="#换方案" class="headerlink" title="换方案"></a>换方案</h3><p>既然问题出在中间商（CDN、DNS、反向代理），那就干脆去掉中间商——<strong>GitHub Pages</strong>。</p>
+<p>全球 CDN、免费 HTTPS、Git 原生集成，唯一的代价是仓库必须公开。反正博客内容本就是公开的，无所谓。</p>
+<hr>
+<h2 id="第二回：仓库改名"><a href="#第二回：仓库改名" class="headerlink" title="第二回：仓库改名"></a>第二回：仓库改名</h2><p>GitHub Pages 要求仓库名必须是 <code>用户名.github.io</code>，于是把 <code>xubuyuan18/hexo</code> 改名为 <code>xubuyuan18/xubuyuan18.github.io</code>。</p>
+<p>改完之后需要同步两处配置：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 更新本地 remote</span></span><br><span class="line">git remote set-url origin https://github.com/xubuyuan18/xubuyuan18.github.io.git</span><br><span class="line"></span><br><span class="line"><span class="comment"># _config.yml 里的 url 也要改</span></span><br><span class="line">url: https://xubuyuan18.github.io  <span class="comment"># 原来是 https://xubuyuan18.github.io/hexo</span></span><br></pre></td></tr></table></figure>
+
+<p>url 忘改的话，文章里的所有链接都会 404，别问我怎么知道的。</p>
+<hr>
+<h2 id="第三回：自动化流水线——懒人的胜利"><a href="#第三回：自动化流水线——懒人的胜利" class="headerlink" title="第三回：自动化流水线——懒人的胜利"></a>第三回：自动化流水线——懒人的胜利</h2><h3 id="GitHub-Actions-自动构建"><a href="#GitHub-Actions-自动构建" class="headerlink" title="GitHub Actions 自动构建"></a>GitHub Actions 自动构建</h3><p>核心 workflow（<code>.github/workflows/deploy.yml</code>）：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="attr">run:</span> <span class="string">npm</span> <span class="string">ci</span> <span class="string">&amp;&amp;</span> <span class="string">npx</span> <span class="string">hexo</span> <span class="string">generate</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">uses:</span> <span class="string">peaceiris/actions-gh-pages@v3</span></span><br><span class="line">  <span class="attr">with:</span></span><br><span class="line">    <span class="attr">github_token:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.GITHUB_TOKEN</span> <span class="string">&#125;&#125;</span></span><br><span class="line">    <span class="attr">publish_dir:</span> <span class="string">./public</span></span><br><span class="line">    <span class="attr">publish_branch:</span> <span class="string">gh-pages</span></span><br></pre></td></tr></table></figure>
+
+<p><code>GITHUB_TOKEN</code> 是 GitHub 自动提供的，不需要手动创建任何密钥。对于同一仓库内部署来说，零配置即可。</p>
+<h3 id="跨仓库触发"><a href="#跨仓库触发" class="headerlink" title="跨仓库触发"></a>跨仓库触发</h3><p>文章源文件在另一个仓库（<code>xubuyuan18/blog</code>），更新后需要通知 hexo 仓库重新构建。用的是 GitHub 的 <strong>repository_dispatch</strong> 机制：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">blog 仓库 push</span><br><span class="line">  → GitHub Actions 调用 repository_dispatch API</span><br><span class="line">  → hexo 仓库收到事件</span><br><span class="line">  → 跑构建，部署到 gh-pages</span><br></pre></td></tr></table></figure>
+
+<p>关键：调用方仓库需要持有<strong>被调用方仓库权限的 Token</strong>，存在 Secrets 里命名 <code>DISPATCH_TOKEN</code>。这个 Token 一路从旧仓库跟着过来还在用，比很多感情都持久。</p>
+<p>全程不需要碰服务器。</p>
+<hr>
+<h2 id="第四回：DNS-与-CDN-缓存"><a href="#第四回：DNS-与-CDN-缓存" class="headerlink" title="第四回：DNS 与 CDN 缓存"></a>第四回：DNS 与 CDN 缓存</h2><p><code>www.xubuyuan.top</code> CNAME → <code>xubuyuan18.github.io</code>，理论上两者等价，实际体验有差异：</p>
+<table>
+<thead>
+<tr>
+<th>域名</th>
+<th>更新速度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>xubuyuan18.github.io</code></td>
+<td>秒更新</td>
+</tr>
+<tr>
+<td><code>www.xubuyuan.top</code></td>
+<td>慢 5~10 分钟</td>
+</tr>
+</tbody></table>
+<p>原因是 GitHub Pages 对自定义域名有 CDN 缓存，<code>*.github.io</code> 域则不走这个缓存。</p>
+<p>解决方案三选一：</p>
+<ol>
+<li><strong>不管</strong>——等几分钟自动刷新</li>
+<li><strong>Cloudflare 前置</strong>——可以手动刷缓存</li>
+<li><strong>直接用 <code>*.github.io</code></strong>——舍弃自定义域名，追求最快更新</li>
+</ol>
+<p>目前选方案 1。</p>
+<hr>
+<h2 id="第五回：VPS-大扫除"><a href="#第五回：VPS-大扫除" class="headerlink" title="第五回：VPS 大扫除"></a>第五回：VPS 大扫除</h2><p>把 Hexo 从 VPS 迁走之后，系统里还留了不少残骸：</p>
+<ul>
+<li>正在运行的 <code>hexo s</code> 进程</li>
+<li>OpenResty 的 hexo 站点配置</li>
+<li>cron 定时拉取任务</li>
+<li><code>/tmp/</code> 下居然还有一整套解压出来的 hexo 项目文件</li>
+</ul>
+<p>清理清单：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">pkill -f hexo</span><br><span class="line"><span class="built_in">rm</span> /opt/1panel/www/conf.d/hexo.conf</span><br><span class="line"><span class="built_in">rm</span> -rf /opt/1panel/www/sites/hexo/</span><br><span class="line">crontab -r</span><br><span class="line"><span class="built_in">rm</span> -rf /tmp/hexo*</span><br></pre></td></tr></table></figure>
+
+<p>配合 <code>ps aux</code>、<code>ss -tlnp</code>、<code>systemctl list-units</code> 确认无残留。VPS 内存多释放了几百 MB。</p>
+<hr>
+<h2 id="第六回：主题配置笔记"><a href="#第六回：主题配置笔记" class="headerlink" title="第六回：主题配置笔记"></a>第六回：主题配置笔记</h2><h3 id="anzhiyu-主题"><a href="#anzhiyu-主题" class="headerlink" title="anzhiyu 主题"></a>anzhiyu 主题</h3><p>主题选了 anzhiyu，安装后改 <code>_config.yml</code> 的 <code>theme</code> 字段即可。</p>
+<p><strong>导航栏音乐播放器：</strong></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">nav_music:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">id:</span> <span class="number">2792934213</span></span><br><span class="line">  <span class="attr">server:</span> <span class="string">netease</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">playlist</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>aplayerInject：</strong> 开启后文章内可嵌入音乐，个人建议开了就别关，中途改配置容易陷入排查深渊。</p>
+<p><strong>封面图：</strong> 试了三种方式——</p>
+<ol>
+<li><code>cover: /images/cover.jpg</code>（相对路径）—— 本地能用，部署后可能 404</li>
+<li><code>cover: https://example.com/cover.jpg</code>（绝对 URL）—— 依赖外部源</li>
+<li><code>cover: https://xubuyuan18.github.io/images/cover.jpg</code>（指向已部署站点）—— 最稳定</li>
+</ol>
+<p>结论：写死完整 URL 虽然丑，但不会背叛你。</p>
+<hr>
+<h2 id="第七回：GitHub-Pages-自定义域名"><a href="#第七回：GitHub-Pages-自定义域名" class="headerlink" title="第七回：GitHub Pages 自定义域名"></a>第七回：GitHub Pages 自定义域名</h2><h3 id="配置步骤"><a href="#配置步骤" class="headerlink" title="配置步骤"></a>配置步骤</h3><p>DNS 加 CNAME 记录：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">www.xubuyuan.top  CNAME →  xubuyuan18.github.io</span><br></pre></td></tr></table></figure>
+
+<p>GitHub 仓库 Settings → Pages → Custom domain 填上域名，Save。</p>
+<h3 id="HTTPS-证书等待"><a href="#HTTPS-证书等待" class="headerlink" title="HTTPS 证书等待"></a>HTTPS 证书等待</h3><p>GitHub 会自动向 Let’s Encrypt 申请证书，需要等几分钟才能签发。刚设置完直接访问会报 <code>ERR_SSL_UNRECOGNIZED_NAME_ALERT</code>，等 5~10 分钟后恢复正常。不用慌，这是正常流程。</p>
+<h3 id="子域名隔离"><a href="#子域名隔离" class="headerlink" title="子域名隔离"></a>子域名隔离</h3><p><code>www.xubuyuan.top</code> 的 DNS 改指向 GitHub Pages，不影响 <code>1p.xubuyuan.top</code>、<code>agent.xubuyuan.top</code>、<code>note.xubuyuan.top</code> 等其他子域名。DNS 的子域名记录是各自独立的。</p>
+<hr>
+<h2 id="踩坑记录"><a href="#踩坑记录" class="headerlink" title="踩坑记录"></a>踩坑记录</h2><h3 id="1-YAML-front-matter-格式"><a href="#1-YAML-front-matter-格式" class="headerlink" title="1. YAML front matter 格式"></a>1. YAML front matter 格式</h3><p><code>---</code> 必须顶格写，前面不能有空格。否则文章发出去全是空白页。</p>
+<h3 id="2-GITHUB-TOKEN-自动注入"><a href="#2-GITHUB-TOKEN-自动注入" class="headerlink" title="2. GITHUB_TOKEN 自动注入"></a>2. GITHUB_TOKEN 自动注入</h3><p>GitHub Actions 中 <code>$&#123;&#123; secrets.GITHUB_TOKEN &#125;&#125;</code> 由系统自动提供，不需要自己创建。手动创建同名 Token 反而会覆盖系统自带的。</p>
+<h3 id="3-配置修改后重新构建"><a href="#3-配置修改后重新构建" class="headerlink" title="3. 配置修改后重新构建"></a>3. 配置修改后重新构建</h3><p>改完 <code>_config.yml</code> 的 <code>url</code> 或 <code>root</code> 后必须重新跑一次构建部署，否则 RSS、Sitemap 里的链接会是错的。</p>
+<h3 id="4-DNS-传播时间"><a href="#4-DNS-传播时间" class="headerlink" title="4. DNS 传播时间"></a>4. DNS 传播时间</h3><p>DNS 修改后传播时长取决于 TTL 设置——快则几分钟，慢则几个小时。最省心的做法是改完放那，第二天自然就好了。</p>
+<hr>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>重新捡起 Hexo 的这几天，核心感受是：<strong>真正解决问题的不是复杂的架构，而是合适的取舍。</strong></p>
+<ul>
+<li>不用 VPS 自建 → 省下维护成本和内存</li>
+<li>不用手动部署 → 省下重复劳动</li>
+<li>不用纠结自定义域名 → 避免 CDN 缓存的困扰</li>
+</ul>
+<p>每个选择都是权衡的结果。</p>
+<hr>
+<p><em>（完）</em></p>
+<p><em>2026-05-30</em></p>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/avatar.jpg" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/avatar.jpg" title="头像" alt="头像"></a><div class="post-copyright__author_name">许步鸢</div><div class="post-copyright__author_desc"></div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="https://xubuyuan18.github.io/2026/05/30/HEXO%E6%8A%98%E8%85%BE%E6%97%A5%E8%AE%B0/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('https://xubuyuan18.github.io/2026/05/30/HEXO%E6%8A%98%E8%85%BE%E6%97%A5%E8%AE%B0/')">HEXO折腾日记</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="https://xubuyuan18.github.io/2026/05/30/HEXO%E6%8A%98%E8%85%BE%E6%97%A5%E8%AE%B0/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=HEXO折腾日记&amp;url=https://xubuyuan18.github.io/2026/05/30/HEXO%E6%8A%98%E8%85%BE%E6%97%A5%E8%AE%B0/&amp;pic=https://t.alcy.cc/pc?_r_=34adb1dc-1080-becd-b703-de6642c9953d" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://xubuyuan18.github.io" target="_blank">青鸢之亭</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/%E6%8A%98%E8%85%BE/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>折腾<span class="tagsPageCount">1</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="https://t.alcy.cc/pc?_r_=e34d2531-d6f4-f0d2-daa2-e9f7ef4a7a4f" data-sites="twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2025/05/30/test/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://t.alcy.cc/pc?_r_=acdf75d0-a68b-c8bf-bc8a-9547e52c9636" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">测试</div></div></a></div><div class="next-post pull-right"><a href="/2026/05/30/%E5%8D%8E%E4%B8%BAICT%E6%AF%94%E8%B5%9B%E8%AE%B0%E5%BD%95/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://t.alcy.cc/pc?_r_=64aa7836-6044-b4b8-4d6d-5821af59c493" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">华为ICT比赛记录</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/08/24/64e6ce9c507bb.png" alt="status"/></div></div><div class="author-info__description">一个爱好开源的普通人的博客</div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/"><h1 class="author-info__name">许步鸢</h1><div class="author-info__desc"></div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/xubuyuan18" target="_blank" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="social-icon faa-parent animated-hover" href="https://space.bilibili.com/441828893" target="_blank" title="BiliBili"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%98%E8%B5%B7%EF%BC%9A%E3%80%8CVPS-%E4%B9%9F%E6%98%AF%E4%BC%9A%E9%A5%BF%E7%9A%84%E3%80%8D"><span class="toc-number">1.</span> <span class="toc-text">缘起：「VPS 也是会饿的」</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E5%9B%9E%EF%BC%9A%E5%AE%BF%E4%B8%BB%E4%B9%8B%E4%BA%89%E2%80%94%E2%80%94%E4%BB%8E-VPS-%E6%90%AC%E5%88%B0-GitHub-Pages"><span class="toc-number">2.</span> <span class="toc-text">第一回：宿主之争——从 VPS 搬到 GitHub Pages</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E5%88%9D%E7%9A%84%E6%96%B9%E6%A1%88"><span class="toc-number">2.1.</span> <span class="toc-text">最初的方案</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8D%A2%E6%96%B9%E6%A1%88"><span class="toc-number">2.2.</span> <span class="toc-text">换方案</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E5%9B%9E%EF%BC%9A%E4%BB%93%E5%BA%93%E6%94%B9%E5%90%8D"><span class="toc-number">3.</span> <span class="toc-text">第二回：仓库改名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E5%9B%9E%EF%BC%9A%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%81%E6%B0%B4%E7%BA%BF%E2%80%94%E2%80%94%E6%87%92%E4%BA%BA%E7%9A%84%E8%83%9C%E5%88%A9"><span class="toc-number">4.</span> <span class="toc-text">第三回：自动化流水线——懒人的胜利</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#GitHub-Actions-%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BA"><span class="toc-number">4.1.</span> <span class="toc-text">GitHub Actions 自动构建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%A8%E4%BB%93%E5%BA%93%E8%A7%A6%E5%8F%91"><span class="toc-number">4.2.</span> <span class="toc-text">跨仓库触发</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E5%9B%9E%EF%BC%9ADNS-%E4%B8%8E-CDN-%E7%BC%93%E5%AD%98"><span class="toc-number">5.</span> <span class="toc-text">第四回：DNS 与 CDN 缓存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E5%9B%9E%EF%BC%9AVPS-%E5%A4%A7%E6%89%AB%E9%99%A4"><span class="toc-number">6.</span> <span class="toc-text">第五回：VPS 大扫除</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E5%9B%9E%EF%BC%9A%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E7%AC%94%E8%AE%B0"><span class="toc-number">7.</span> <span class="toc-text">第六回：主题配置笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#anzhiyu-%E4%B8%BB%E9%A2%98"><span class="toc-number">7.1.</span> <span class="toc-text">anzhiyu 主题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%83%E5%9B%9E%EF%BC%9AGitHub-Pages-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D"><span class="toc-number">8.</span> <span class="toc-text">第七回：GitHub Pages 自定义域名</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%AD%A5%E9%AA%A4"><span class="toc-number">8.1.</span> <span class="toc-text">配置步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTPS-%E8%AF%81%E4%B9%A6%E7%AD%89%E5%BE%85"><span class="toc-number">8.2.</span> <span class="toc-text">HTTPS 证书等待</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%90%E5%9F%9F%E5%90%8D%E9%9A%94%E7%A6%BB"><span class="toc-number">8.3.</span> <span class="toc-text">子域名隔离</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95"><span class="toc-number">9.</span> <span class="toc-text">踩坑记录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-YAML-front-matter-%E6%A0%BC%E5%BC%8F"><span class="toc-number">9.1.</span> <span class="toc-text">1. YAML front matter 格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-GITHUB-TOKEN-%E8%87%AA%E5%8A%A8%E6%B3%A8%E5%85%A5"><span class="toc-number">9.2.</span> <span class="toc-text">2. GITHUB_TOKEN 自动注入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%85%8D%E7%BD%AE%E4%BF%AE%E6%94%B9%E5%90%8E%E9%87%8D%E6%96%B0%E6%9E%84%E5%BB%BA"><span class="toc-number">9.3.</span> <span class="toc-text">3. 配置修改后重新构建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-DNS-%E4%BC%A0%E6%92%AD%E6%97%B6%E9%97%B4"><span class="toc-number">9.4.</span> <span class="toc-text">4. DNS 传播时间</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-number">10.</span> <span class="toc-text">后记</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/05/30/hexo/" title="Hello World"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://t.alcy.cc/pc?_r_=e34d2531-d6f4-f0d2-daa2-e9f7ef4a7a4f" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/2026/05/30/hexo/" title="Hello World">Hello World</a><time datetime="2026-05-30T13:20:08.164Z" title="发表于 2026-05-30 21:20:08">2026-05-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/05/30/%E5%8D%8E%E4%B8%BAICT%E6%AF%94%E8%B5%9B%E8%AE%B0%E5%BD%95/" title="华为ICT比赛记录"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://t.alcy.cc/pc?_r_=64aa7836-6044-b4b8-4d6d-5821af59c493" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="华为ICT比赛记录"/></a><div class="content"><a class="title" href="/2026/05/30/%E5%8D%8E%E4%B8%BAICT%E6%AF%94%E8%B5%9B%E8%AE%B0%E5%BD%95/" title="华为ICT比赛记录">华为ICT比赛记录</a><time datetime="2026-05-30T02:43:50.000Z" title="发表于 2026-05-30 10:43:50">2026-05-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/05/30/HEXO%E6%8A%98%E8%85%BE%E6%97%A5%E8%AE%B0/" title="HEXO折腾日记"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://t.alcy.cc/pc?_r_=34adb1dc-1080-becd-b703-de6642c9953d" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HEXO折腾日记"/></a><div class="content"><a class="title" href="/2026/05/30/HEXO%E6%8A%98%E8%85%BE%E6%97%A5%E8%AE%B0/" title="HEXO折腾日记">HEXO折腾日记</a><time datetime="2026-05-30T02:38:09.000Z" title="发表于 2026-05-30 10:38:09">2026-05-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/05/30/test/" title="测试"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://t.alcy.cc/pc?_r_=acdf75d0-a68b-c8bf-bc8a-9547e52c9636" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="测试"/></a><div class="content"><a class="title" href="/2025/05/30/test/" title="测试">测试</a><time datetime="2025-05-30T10:29:14.000Z" title="发表于 2025-05-30 18:29:14">2025-05-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/05/30/Linuxn%E5%A8%98%E5%AE%88%E6%8A%A4%E6%97%A5%E8%AE%B0/" title="Linuxn娘守护日记"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://t.alcy.cc/pc?_r_=b6a842b2-44cf-19d1-82b7-5e6db233c153" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linuxn娘守护日记"/></a><div class="content"><a class="title" href="/2025/05/30/Linuxn%E5%A8%98%E5%AE%88%E6%8A%A4%E6%97%A5%E8%AE%B0/" title="Linuxn娘守护日记">Linuxn娘守护日记</a><time datetime="2025-05-30T02:29:14.000Z" title="发表于 2025-05-30 10:29:14">2025-05-30</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div id="footer_deal"><a class="deal_link" href="mailto:3432150240@qq.com" title="email"><i class="anzhiyufont anzhiyu-icon-envelope"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://x.com/Nefelibata0718" title="X"><i class="anzhiyufont anzhiyu-icon-dove"></i></a><img class="footer_mini_logo" title="返回顶部" alt="返回顶部" onclick="anzhiyu.scrollToDest(0, 500)" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/avatar.jpg" size="50px"/><a class="deal_link" target="_blank" rel="noopener" href="https://github.com/xubuyuan18" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://space.bilibili.com/441828893" title="Bilibili"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo_v8.1.2" title="博客框架为Hexo_v8.1.2"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Frame-Hexo.svg" alt="博客框架为Hexo_v8.1.2"/></a><a class="github-badge" target="_blank" href="https://hexo.anheyu.com/" style="margin-inline:5px" data-title="本站使用AnZhiYu主题" title="本站使用AnZhiYu主题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.9/img/Theme-AnZhiYu-2E67D3.svg" alt="本站使用AnZhiYu主题"/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" data-title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.2.0/img/badge/Copyright-BY-NC-SA.svg" alt="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"/></a></p></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2020 - 2026 By <a class="footer-bar-link" href="/" title="许步鸢" target="_blank">许步鸢</a></div></div><div id="footer-type-tips"></div><div class="js-pjax"><script>function subtitleType () {
+  getScript('https://sdk.jinrishici.com/v2/browser/jinrishici.js').then(() => {
+    jinrishici.load(result =>{
+      if (true) {
+        const sub = []
+        const content = result.data.content
+        sub.unshift(content)
+        window.typed = new Typed('#footer-type-tips', {
+          strings: sub,
+          startDelay: 300,
+          typeSpeed: 150,
+          loop: true,
+          backSpeed: 50,
+        })
+      } else {
+        document.getElementById('footer-type-tips').innerHTML = result.data.content
+      }
+    })
+  })
+}
+
+if (true) {
+  if (typeof Typed === 'function') {
+    subtitleType()
+  } else {
+    getScript('https://cdn.cbd.int/typed.js@2.1.0/dist/typed.umd.js').then(subtitleType)
+  }
+} else {
+  subtitleType()
+}
+</script></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="本站主题">本站主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">3</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">相关站点</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="http://File.xubuyuan.top" title="OpenList"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="OpenList"/><span class="back-menu-item-text">OpenList</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="http://1p.xubuyuan.top" title="1Panel"><img class="back-menu-item-icon" alt="1Panel"/><span class="back-menu-item-text">1Panel</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="http://agent.xubuyuan.top" title="Agent"><img class="back-menu-item-icon" alt="Agent"/><span class="back-menu-item-text">Agent</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="http://38.244.14.227:20344" title="3XUI"><img class="back-menu-item-icon" alt="3XUI"/><span class="back-menu-item-text">3XUI</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="http://note.xubuyuan.top" title="Obsidian"><img class="back-menu-item-icon" alt="Obsidian"/><span class="back-menu-item-text">Obsidian</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">我的项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://github.com/xubuyuan18/dms-plugin-Lyrics" title="DMS-Lyrics"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="DMS-Lyrics"/><span class="back-menu-item-text">DMS-Lyrics</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/archives/"><span> 归档</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/categories/"><span> 分类</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/tags/"><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番列表</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/equipment/"><i class="anzhiyufont anzhiyu-icon-keyboard faa-tada" style="font-size: 0.9em;"></i><span> 装备列表</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:toRandomPost()"><span> 随便逛逛</span></a></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/note/" style="font-size: 0.88rem;">note<sup>1</sup></a><a href="/tags/%E6%8A%98%E8%85%BE/" style="font-size: 0.88rem;">折腾<sup>1</sup></a><a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 0.88rem;">笔记<sup>2</sup></a><a href="/tags/%E9%9A%8F%E6%9C%BA/" style="font-size: 0.88rem;">随机<sup>1</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="2792934213" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="anzhiyufont anzhiyu-icon-xmark"></i></button></nav><div class="is-center" id="loading-database"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-pulse-icon"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://music.163.com/#/playlist?id=2792934213&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@6.1.6/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("06/01/2024 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2020 By 安知鱼 V1.7.1",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 许步鸢 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><input type="hidden" name="page-type" id="page-type" value="post"></div><script async data-pjax src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.1/bubble/bubble.js"></script><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://cdn.cbd.int/qrcodejs@1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/fireworks.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
