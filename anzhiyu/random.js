@@ -1,3 +1,3 @@
-var posts=["1970/01/01/hello-world/","2025/05/30/Linuxn娘守护日记/","2026/05/30/华为ICT比赛记录/"];function toRandomPost(){
+var posts=["1970/01/01/hello-world/","2025/05/30/Linuxn娘守护日记/","2025/05/30/Linux娘守护日记/","2026/05/30/华为ICT比赛记录/","2025/05/30/test/"];function toRandomPost(){
     pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);
   };
