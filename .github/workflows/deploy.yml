@@ -19,10 +19,12 @@ jobs:
         if: github.event_name == 'repository_dispatch'
         run: |
           git clone https://github.com/xubuyuan18/blog.git /tmp/blog
+          git rm -r source/_posts/ 2>/dev/null || true
+          mkdir -p source/_posts/
           cp /tmp/blog/*.md source/_posts/
           rm -rf /tmp/blog
           git add source/_posts/
-          git diff --cached --quiet && echo "No new posts" || (
+          git diff --cached --quiet && echo "No changes" || (
             git config user.name "github-actions" &&
             git config user.email "github-actions@github.com" &&
             git commit -m "sync: update posts from blog"
@@ -35,6 +37,9 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Clean hexo cache
+        run: npx hexo clean
 
       - name: Build hexo
         run: npx hexo generate
