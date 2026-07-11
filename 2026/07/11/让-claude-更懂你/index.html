@@ -1,0 +1,615 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>让 Claude Code 更懂你：从零开始的个性化指南 | 青鸢之亭</title><meta name="keywords" content="Claude,效率,工具"><meta name="author" content="许步鸢"><meta name="copyright" content="许步鸢"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#18171d"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="让 Claude Code 更懂你：从零开始的个性化指南"><meta name="application-name" content="让 Claude Code 更懂你：从零开始的个性化指南"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#18171d"><meta property="og:type" content="article"><meta property="og:title" content="让 Claude Code 更懂你：从零开始的个性化指南"><meta property="og:url" content="https://www.xubuyuan.top/2026/07/11/%E8%AE%A9-claude-%E6%9B%B4%E6%87%82%E4%BD%A0/index.html"><meta property="og:site_name" content="青鸢之亭"><meta property="og:description" content="用过一阵 Claude Code 之后，你大概会发现一件怪事：这玩意儿很聪明，但每次都像第一次见你。昨天纠正过它”用 pnpm 别用 npm”，今天它还是给你敲 npm install。前天说过”删文件先问我”，今天照样一顿 rm -rf。 这不是它蠢——是你没告诉它。 这篇文章讲怎么让 Clau"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://t.alcy.cc/pc?_r_=5fd59be2-d985-da85-b853-fa8dd1822150"><meta property="article:author" content="许步鸢"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://t.alcy.cc/pc?_r_=5fd59be2-d985-da85-b853-fa8dd1822150"><meta name="description" content="用过一阵 Claude Code 之后，你大概会发现一件怪事：这玩意儿很聪明，但每次都像第一次见你。昨天纠正过它”用 pnpm 别用 npm”，今天它还是给你敲 npm install。前天说过”删文件先问我”，今天照样一顿 rm -rf。 这不是它蠢——是你没告诉它。 这篇文章讲怎么让 Clau"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="https://www.xubuyuan.top/2026/07/11/%E8%AE%A9-claude-%E6%9B%B4%E6%87%82%E4%BD%A0/"><link rel="preconnect" href="//cdn.cbd.int"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@6.1.6/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: undefined,
+  postHeadAiDescription: undefined,
+  diytitle: {"enable":true,"leaveTitle":"不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎回来！"},
+  LA51: undefined,
+  greetingBox: undefined,
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  music_page_default: "nav_music",
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: {"skills":["🤖️ 数码科技爱好者","🔍 分享与热心帮助","🏠 智能家居小能手","🔨 设计开发一条龙"]},
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: 许步鸢","link":"链接: ","source":"来源: 青鸢之亭","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.2.0/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.2.0/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: '青鸢之亭',
+  title: '让 Claude Code 更懂你：从零开始的个性化指南',
+  postAI: '',
+  pageFillDescription: '为什么默认的 Claude 不够用, 第一层：写好 CLAUDE.md（最重要占 80% 效果）, 该写什么, 该避免什么, 一个最小起步模板, 第二层：用好 memory（长期累积的具体事实）, 怎么触发, 什么值得存, 什么不该存, 一个好习惯, 第三层：减少权限弹窗, 第四层：hooks（真正的自动化）, 有用的 hook 场景, 什么时候别用 hook, 第五层：skills 和斜杠命令, 一个推荐的上手顺序, 常见误区, 尾声用过一阵之后你大概会发现一件怪事这玩意儿很聪明但每次都像第一次见你昨天纠正过它用别用今天它还是给你敲前天说过删文件先问我今天照样一顿这不是它蠢是你没告诉它这篇文章讲怎么让真正记住你贴合你从最简单的一行配置到能改变工作流的自动化为什么默认的不够用先讲个我自己的经历刚开始用的时候我一度觉得它什么都会但什么都不精写它爱加一堆废话注释写它老忘了我在上让我在里回消息它给我一段商务邮件模板后来我才明白问题不在在我它默认对所有人是一套通用模板一个刚工作两三年的英文母语的用户的混合各种技术栈的比较正式的助手这个模板对任何一个具体的人来说都不完全合适想让它变合适本质是一件事把它每次都要从零猜的东西变成它一开始就知道的事实具体三条路径由浅入深手段回答的问题何时用我是谁一次配置长期生效这件具体的事以后要记住遇到一次记一次每次自动发生什么想让某个动作自动化三个都不难往下看第一层写好最重要占效果是每次启动会话时自动加载的说明书你在里面写什么它就知道什么两种位置全局上是你的用户名所有项目共享项目级项目根目录下的只在这个项目里生效会追加在全局之后不会覆盖新手常犯的错是把当成日记本或者咒语写一堆玄学别这样应该是一份给同事看的入职文档如果一个新同事今天来跟你结对编程你会告诉他哪些事该写什么按重要性排你是谁一两句话说清楚身份水平母语使用中文交流为主我是独立开发者主要写和年经验术语可以直接用不用解释和是什么沟通风格回复用什么语言要不要先解释再动手简短还是详细回复语言中文为主代码命令报错保留英文风格先解释思路再动手有实际影响的操作写文件跑脚本装依赖先用句说清楚要做什么为什么再动手纯读取搜索不用铺垫不要过度道歉不要重复我说过的话来确认理解做事约束这一节最容易被忽略也最能救命明确列出必须先问我的清单越具体越好不可逆操作必须先问我删除文件发布上线覆盖已有内容清空目录哪怕之前授权过一次下一次也要再问不要自动装依赖要装的时候先说要装什么为什么修改配置文件前先展示内容让我确认写谨慎点没用要写删文件前必须问我环境相关的坑你的机器有什么特别的地方工作目录常在你的用户名里的是不是也不是用不是用正斜杠用不是路径里有中文空格时用引号包起来用户尤其要写这段默认按假设会给你一堆反斜杠转义之类的东西跑起来一半错分场景规则如果你的用途混杂写代码写作脚本查资料一套规则套不了所有事分开写写代码时匹配周围代码的风格不要强行套外来风格不要主动加不必要的注释只在逻辑不明显时写优先修根因不要加吞错误写作时用户是中文母语避免机翻感除非我说扩写否则不要注水删掉综上所述总的来说这种保留我原稿的语气不要擅自提升文采查资料时引用具体来源不要说根据某某研究时效性强的问题价格版本号先不要凭记忆答讨厌行为清单正面规则容易被绕过反面规则更硬写下你被惹烦过的具体行为我最讨厌的行为明明失败了却说完成了每一步都问要继续吗该问的不问不该问的一直问一次改一堆无关文件没法审报错时不看真正的错误先猜三个可能的原因这一节我强烈建议用一周迭代每次被惹到就把那个具体行为补进来三四周之后你的会明显变得识相该避免什么别写永远不会更新的信息比如今天是明天就过期了系统本身就知道日期别写玄学请像一个资深工程师一样思考这种没用写具体行为别写代码结构历史那些自己能查到写在里是浪费别写太长每次都要加载进上下文写字的哲学思考没意义是舒服的长度一个最小起步模板不知道怎么开始就抄这个改成你的关于我使用中文交流主要用途写代码写作脚本查资料删掉不需要的平台沟通偏好回复语言中文为主代码保留英文有实际影响的操作前用句说明思路再动手不要过度道歉不要重复我说过的话做事约束不可逆操作先问我删文件装依赖改配置不要主动装依赖要装先告诉我装什么讨厌行为失败了却说完成每步都问要不要继续一次改一堆无关文件先从这个跑起来用一两周之后再迭代不要一开始就想写完美你还不知道自己会被什么惹烦第二层用好长期累积的具体事实回答我是谁回答这件具体的事以后要记住存在目录下每条记忆是一个文件带索引在每次会话都会读怎么触发最简单的方式直接跟说记住这个或者这个以后要注意它会自动写进或者用斜杠命令什么值得存按系统本身的分类你是谁的补充角色专长口味偏好例我是产品经理不是工程师看到代码需要多加解释你对行为的具体反馈这个最有价值例我说跑一下测试时指的是不是因为我的项目用例我讨厌你在总结里用一个都不要用某个项目的隐性知识例项目的部署命令是不要用直接改外部资源指针例公司的文档在什么不该存代码库里已经有的注释写过的只对本次对话有意义的临时信息会变的东西当前版本是下周就错了一个好习惯被惹烦第二次的时候让它记下来第一次可以当偶发第二次就是模式这时候说一句以后都别这样记下来它会存到下一次会话就不会犯了第三层减少权限弹窗默认会在跑很多命令前弹窗问你允许吗刚开始这挺好安全但一旦你信任了自己的工作流这些弹窗就变成噪音了最快的减噪方式跑斜杠命令它会扫你的历史命令把常用的只读命令等加到的白名单里写命令和危险命令仍然会问你安全性没降跑完立刻能感觉到差别这是投入产出比最高的一步第四层真正的自动化前面三层都是让更懂你这一层不一样是让能自动完成你需要的动作关键理解自己不能每次做完就自动做它没有那个能力它只是回答你的对话真正执行每次自动的是这个宿主程序所以想自动化必须配如果你只在里写每次编辑完文件自动不会生效因为读到这句话时可能已经编辑完文件了它没办法穿越回过去长这样在里看起来复杂用斜杠命令它会带你交互式地配置有用的场景编辑完文件自动编辑完文件自动编辑完自动跑语法检查停下来的时候发桌面通知防止你等半天没意识到它已经好了每次前自动跑测试什么时候别用你还不确定要不要自动化的时候先手动做几次模式清楚了再自动化每次都不一样的动作那本来就不该自动化会影响其他工具正在做的事的动作比如中途改文件让另一个程序困惑第五层和斜杠命令内置了一堆技能包输入能看到全部我用得最多的命令干嘛的审当前找和可以简化的地方跑起来验证改动真的生效不是只看类型对不对清理改过的代码里的重复和啰嗦深度调研任何话题多来源交叉验证给新项目生成初始前面提过减权限弹窗交互式改配用这个大部分斜杠命令不用记参数直接敲上去它会问你要什么一个推荐的上手顺序如果你从零开始我建议按这个顺序做每一步产出立竿见影第天分钟写全局用上面那个最小模板跑第周每次被惹烦把具体行为补到的讨厌行为清单遇到需要这个以后要记住的时候说记住这个第周有明确重复动作了配一两个给最常用的项目建项目级把项目特有的命令和约定放进去长期每一两个月回头看看和删掉过时的合并重复的不要一开始就想配完美你还不知道自己真正的痛点在哪让它跑让它烦你然后针对性地补这才是最有效的路径常见误区误区越长越好不是它每次都要加载进上下文写得像本书反而稀释重点覆盖高频场景就够误区把偏好写进而不是适合具体事实某个项目的部署命令某个的怪癖偏好和身份写更合适每次都会加载是按相关性召回的不保证每次都读到误区期待自动做层的事每次做完就自动做这类只能靠里写没用误区写玄学咒语请深呼吸再回答想象你是一个工程师这些在上有时有点点效果但在这种长时间任务型场景里几乎没有意义具体行为规则人格误区不敢改它就是个文件改坏了删掉重来就行真怕的话先备份一份别把它当成什么神秘配置尾声让更懂你这件事没有一劳永逸的方法你和你的工作习惯会一直变会一直更新配置也就一直要跟着调但这件事的投入产出比高得离谱花两小时把写好接下来几个月每天省下的对话摩擦加起来可能是几十小时而且比省时间更重要的是一个真的懂你的工具用起来的感觉跟一个通用工具是两回事祝你调教顺利',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2026-07-11 20:48:30',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 8.1.2"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="/img/avatar.jpg"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">相关站点</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="http://File.xubuyuan.top" title="OpenList"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="OpenList"/><span class="back-menu-item-text">OpenList</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="http://1p.xubuyuan.top" title="1Panel"><img class="back-menu-item-icon" alt="1Panel"/><span class="back-menu-item-text">1Panel</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="http://agent.xubuyuan.top" title="Agent"><img class="back-menu-item-icon" alt="Agent"/><span class="back-menu-item-text">Agent</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="http://38.244.14.227:20344" title="3XUI"><img class="back-menu-item-icon" alt="3XUI"/><span class="back-menu-item-text">3XUI</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="http://note.xubuyuan.top" title="Obsidian"><img class="back-menu-item-icon" alt="Obsidian"/><span class="back-menu-item-text">Obsidian</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">我的项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://github.com/xubuyuan18/dms-plugin-Lyrics" title="DMS-Lyrics"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="DMS-Lyrics"/><span class="back-menu-item-text">DMS-Lyrics</span></a></div></div></div></div><a id="site-name" href="/" accesskey="h"><div class="title">青鸢之亭</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a><div id="he-plugin-simple"></div><script>var WIDGET = {
+  "CONFIG": {
+    "modules": "0124",
+    "background": "2",
+    "tmpColor": "FFFFFF",
+    "tmpSize": "16",
+    "cityColor": "FFFFFF",
+    "citySize": "16",
+    "aqiColor": "E8D87B",
+    "aqiSize": "16",
+    "weatherIconSize": "24",
+    "alertIconSize": "18",
+    "padding": "10px 10px 10px 10px",
+    "shadow": "0",
+    "language": "auto",
+    "borderRadius": "20",
+    "fixed": "true",
+    "vertical": "top",
+    "horizontal": "left",
+    "left": "20",
+    "top": "7.1",
+    "key": "df245676fb434a0691ead1c63341cd94"
+  }
+}
+</script><link rel="stylesheet" href="https://widget.qweather.net/simple/static/css/he-simple.css?v=1.4.0"/><script src="https://widget.qweather.net/simple/static/js/he-simple.js?v=1.4.0"></script></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/archives/"><span> 归档</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/categories/"><span> 分类</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/tags/"><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番列表</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/equipment/"><i class="anzhiyufont anzhiyu-icon-keyboard faa-tada" style="font-size: 0.9em;"></i><span> 装备列表</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:toRandomPost()"><span> 随便逛逛</span></a></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍" accesskey="s"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" alt="微信" src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Claude/" style="font-size: 1.05rem;">Claude<sup>1</sup></a><a href="/tags/K8s/" style="font-size: 1.05rem;">K8s<sup>1</sup></a><a href="/tags/kvm/" style="font-size: 1.05rem;">kvm<sup>1</sup></a><a href="/tags/llm/" style="font-size: 1.05rem;">llm<sup>1</sup></a><a href="/tags/note/" style="font-size: 1.05rem;">note<sup>3</sup></a><a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 1.05rem;">工具<sup>1</sup></a><a href="/tags/%E6%8A%98%E8%85%BE/" style="font-size: 1.05rem;">折腾<sup>3</sup></a><a href="/tags/%E6%95%88%E7%8E%87/" style="font-size: 1.05rem;">效率<sup>1</sup></a><a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 1.05rem;">笔记<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2026/07/"><span class="card-archive-list-date">七月 2026</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2026/05/"><span class="card-archive-list-date">五月 2026</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2026/04/"><span class="card-archive-list-date">四月 2026</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/06/"><span class="card-archive-list-date">六月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/05/"><span class="card-archive-list-date">五月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/06/"><span class="card-archive-list-date">六月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/03/"><span class="card-archive-list-date">三月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url">技术</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/Claude/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Claude</span></a><a class="article-meta__tags" href="/tags/%E6%95%88%E7%8E%87/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>效率</span></a><a class="article-meta__tags" href="/tags/%E5%B7%A5%E5%85%B7/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>工具</span></a></span></div></div><h1 class="post-title" itemprop="name headline">让 Claude Code 更懂你：从零开始的个性化指南</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2026-07-11T12:35:47.000Z" title="发表于 2026-07-11 20:35:47">2026-07-11</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2026-07-11T12:48:30.522Z" title="更新于 2026-07-11 20:48:30">2026-07-11</time></span></div><div class="meta-secondline"><span class="post-meta-separator"></span><span class="post-meta-wordcount"><i class="anzhiyufont anzhiyu-icon-file-word post-meta-icon" title="文章字数"></i><span class="post-meta-label" title="文章字数">字数总计:</span><span class="word-count" title="文章字数">3.5k</span><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-clock post-meta-icon" title="阅读时长"></i><span class="post-meta-label" title="阅读时长">阅读时长:</span><span>11分钟</span></span><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为大连"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>大连</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="https://t.alcy.cc/pc?_r_=5fd59be2-d985-da85-b853-fa8dd1822150"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="https://www.xubuyuan.top/2026/07/11/%E8%AE%A9-claude-%E6%9B%B4%E6%87%82%E4%BD%A0/"><header><a class="post-meta-categories" href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url">技术</a><a href="/tags/Claude/" tabindex="-1" itemprop="url">Claude</a><a href="/tags/%E6%95%88%E7%8E%87/" tabindex="-1" itemprop="url">效率</a><a href="/tags/%E5%B7%A5%E5%85%B7/" tabindex="-1" itemprop="url">工具</a><h1 id="CrawlerTitle" itemprop="name headline">让 Claude Code 更懂你：从零开始的个性化指南</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">许步鸢</span><time itemprop="dateCreated datePublished" datetime="2026-07-11T12:35:47.000Z" title="发表于 2026-07-11 20:35:47">2026-07-11</time><time itemprop="dateCreated datePublished" datetime="2026-07-11T12:48:30.522Z" title="更新于 2026-07-11 20:48:30">2026-07-11</time></header><blockquote>
+<p>用过一阵 Claude Code 之后，你大概会发现一件怪事：这玩意儿很聪明，但<strong>每次都像第一次见你</strong>。<br>昨天纠正过它”用 pnpm 别用 npm”，今天它还是给你敲 <code>npm install</code>。前天说过”删文件先问我”，今天照样一顿 <code>rm -rf</code>。</p>
+<p>这不是它蠢——是你没告诉它。</p>
+<p>这篇文章讲怎么让 Claude Code 真正<strong>记住你、贴合你</strong>，从最简单的一行配置，到能改变工作流的自动化 hook。</p>
+</blockquote>
+<hr>
+<h2 id="为什么默认的-Claude-不够用"><a href="#为什么默认的-Claude-不够用" class="headerlink" title="为什么默认的 Claude 不够用"></a>为什么默认的 Claude 不够用</h2><p>先讲个我自己的经历。</p>
+<p>刚开始用 Claude Code 的时候，我一度觉得它”什么都会但什么都不精”。写 Python 它爱加一堆废话注释，写 Bash 它老忘了我在 Windows 上，让我在 Slack 里回消息它给我一段商务邮件模板。</p>
+<p>后来我才明白，问题不在 Claude，在我。</p>
+<p><strong>它默认对所有人是一套通用模板</strong>——一个刚工作两三年的、英文母语的、Linux 用户的、混合各种技术栈的、比较正式的助手。这个模板对任何一个具体的人来说都不完全合适。</p>
+<p>想让它变”合适”，本质是一件事：<strong>把它每次都要从零猜的东西，变成它一开始就知道的事实。</strong></p>
+<p>具体三条路径，由浅入深：</p>
+<table>
+<thead>
+<tr>
+<th>手段</th>
+<th>回答的问题</th>
+<th>何时用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>CLAUDE.md</strong></td>
+<td>“我是谁？”</td>
+<td>一次配置，长期生效</td>
+</tr>
+<tr>
+<td><strong>memory</strong></td>
+<td>“这件具体的事以后要记住”</td>
+<td>遇到一次记一次</td>
+</tr>
+<tr>
+<td><strong>hooks</strong></td>
+<td>“每次自动发生什么”</td>
+<td>想让某个动作自动化</td>
+</tr>
+</tbody></table>
+<p>三个都不难。往下看。</p>
+<hr>
+<h2 id="第一层：写好-CLAUDE-md（最重要，占-80-效果）"><a href="#第一层：写好-CLAUDE-md（最重要，占-80-效果）" class="headerlink" title="第一层：写好 CLAUDE.md（最重要，占 80% 效果）"></a>第一层：写好 CLAUDE.md（最重要，占 80% 效果）</h2><p>CLAUDE.md 是 Claude Code 每次启动会话时<strong>自动加载</strong>的说明书。你在里面写什么，它就知道什么。</p>
+<p>两种位置：</p>
+<ul>
+<li><strong>全局 CLAUDE.md</strong>：<code>~/.claude/CLAUDE.md</code>（Windows 上是 <code>C:\Users\你的用户名\.claude\CLAUDE.md</code>）——所有项目共享</li>
+<li><strong>项目级 CLAUDE.md</strong>：项目根目录下的 <code>CLAUDE.md</code>——只在这个项目里生效，会<strong>追加</strong>在全局之后（不会覆盖）</li>
+</ul>
+<p>新手常犯的错是把 CLAUDE.md 当成”日记本”或者”AI 咒语”，写一堆玄学。别这样。CLAUDE.md 应该是一份<strong>给同事看的入职文档</strong>——如果一个新同事今天来跟你结对编程，你会告诉他哪些事？</p>
+<h3 id="该写什么"><a href="#该写什么" class="headerlink" title="该写什么"></a>该写什么</h3><p>按重要性排：</p>
+<p><strong>1. 你是谁</strong></p>
+<p>一两句话说清楚身份、水平、母语。</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> 使用中文交流为主。</span><br><span class="line"><span class="bullet">-</span> 我是独立开发者，主要写 Python 和 TypeScript。</span><br><span class="line"><span class="bullet">-</span> 5 年经验，术语可以直接用，不用解释 git 和 Docker 是什么。</span><br></pre></td></tr></table></figure>
+
+<p><strong>2. 沟通风格</strong></p>
+<p>回复用什么语言？要不要先解释再动手？简短还是详细？</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> 回复语言：中文为主，代码/命令/报错保留英文。</span><br><span class="line"><span class="bullet">-</span> 风格：先解释思路再动手。有实际影响的操作（写文件、跑脚本、装依赖），</span><br><span class="line">  先用 1–3 句说清楚要做什么、为什么，再动手。纯读取搜索不用铺垫。</span><br><span class="line"><span class="bullet">-</span> 不要过度道歉，不要重复我说过的话来&quot;确认理解&quot;。</span><br></pre></td></tr></table></figure>
+
+<p><strong>3. 做事约束</strong></p>
+<p><strong>这一节最容易被忽略，也最能救命。</strong></p>
+<p>明确列出”必须先问我”的清单，越具体越好。</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> 不可逆操作必须先问我：删除文件、git commit / push、发布/上线、</span><br><span class="line">  覆盖已有内容、清空目录。哪怕之前授权过一次，下一次也要再问。</span><br><span class="line"><span class="bullet">-</span> 不要自动装依赖（npm install、pip install、winget install）。</span><br><span class="line">  要装的时候先说要装什么、为什么。</span><br><span class="line"><span class="bullet">-</span> 修改配置文件前，先展示内容让我确认。</span><br></pre></td></tr></table></figure>
+
+<p>写”谨慎点”没用。要写”删文件前必须问我”。</p>
+<p><strong>4. 环境相关的坑</strong></p>
+<p>你的机器有什么特别的地方？</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> Windows 11，工作目录常在 C:\Users\你的用户名。</span><br><span class="line"><span class="bullet">-</span> Claude Code 里的 bash 是 Git Bash（POSIX sh），不是 cmd 也不是 PowerShell。</span><br><span class="line">  用 /dev/null 不是 NUL，用正斜杠，用 $VAR 不是 %VAR%。</span><br><span class="line"><span class="bullet">-</span> 路径里有中文/空格时用引号包起来。</span><br></pre></td></tr></table></figure>
+
+<p>Windows 用户尤其要写这段——Claude 默认按 Linux 假设，会给你一堆 <code>NUL</code>、<code>&amp;&amp;</code>、反斜杠转义之类的东西，跑起来一半错。</p>
+<p><strong>5. 分场景规则</strong></p>
+<p>如果你的用途混杂（写代码 + 写作 + 脚本 + 查资料），一套规则套不了所有事。<strong>分开写</strong>：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">## 写代码时</span></span><br><span class="line"><span class="bullet">-</span> 匹配周围代码的风格，不要强行套外来风格。</span><br><span class="line"><span class="bullet">-</span> 不要主动加不必要的注释——只在逻辑不明显时写。</span><br><span class="line"><span class="bullet">-</span> 优先修根因，不要加 try/catch 吞错误。</span><br><span class="line"></span><br><span class="line"><span class="section">## 写作时</span></span><br><span class="line"><span class="bullet">-</span> 用户是中文母语，避免机翻感。</span><br><span class="line"><span class="bullet">-</span> 除非我说&quot;扩写&quot;，否则不要注水。删掉&quot;综上所述&quot;、&quot;总的来说&quot;这种。</span><br><span class="line"><span class="bullet">-</span> 保留我原稿的语气，不要擅自&quot;提升文采&quot;。</span><br><span class="line"></span><br><span class="line"><span class="section">## 查资料时</span></span><br><span class="line"><span class="bullet">-</span> 引用具体来源，不要说&quot;根据某某研究&quot;。</span><br><span class="line"><span class="bullet">-</span> 时效性强的问题（价格、版本号），先 WebSearch 不要凭记忆答。</span><br></pre></td></tr></table></figure>
+
+<p><strong>6. 讨厌行为清单</strong></p>
+<p>正面规则容易被绕过，反面规则更硬。写下你被惹烦过的具体行为：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">## 我最讨厌的行为</span></span><br><span class="line"><span class="bullet">-</span> 明明失败了却说&quot;完成了 ✅&quot;。</span><br><span class="line"><span class="bullet">-</span> 每一步都问&quot;要继续吗&quot;（该问的不问，不该问的一直问）。</span><br><span class="line"><span class="bullet">-</span> 一次改一堆无关文件，diff 没法审。</span><br><span class="line"><span class="bullet">-</span> 报错时不看真正的错误，先猜三个可能的原因。</span><br></pre></td></tr></table></figure>
+
+<p>这一节我强烈建议<strong>用一周迭代</strong>——每次被 Claude 惹到，就把那个具体行为补进来。三四周之后你的 Claude 会明显变得”识相”。</p>
+<h3 id="该避免什么"><a href="#该避免什么" class="headerlink" title="该避免什么"></a>该避免什么</h3><ul>
+<li><strong>别写永远不会更新的信息</strong>。比如”今天是 2026-07-10”——明天就过期了。系统本身就知道日期。</li>
+<li><strong>别写玄学</strong>。”请像一个资深工程师一样思考”这种没用。写具体行为。</li>
+<li><strong>别写代码结构 &#x2F; git 历史</strong>。那些 Claude 自己能查到，写在 CLAUDE.md 里是浪费。</li>
+<li><strong>别写太长</strong>。CLAUDE.md 每次都要加载进上下文，写 3000 字的哲学思考没意义。3–5KB 是舒服的长度。</li>
+</ul>
+<h3 id="一个最小起步模板"><a href="#一个最小起步模板" class="headerlink" title="一个最小起步模板"></a>一个最小起步模板</h3><p>不知道怎么开始就抄这个，改成你的：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># User Memory</span></span><br><span class="line"></span><br><span class="line"><span class="section">## 关于我</span></span><br><span class="line"><span class="bullet">-</span> 使用中文交流。</span><br><span class="line"><span class="bullet">-</span> 主要用途：[写代码 / 写作 / 脚本 / 查资料，删掉不需要的]。</span><br><span class="line"><span class="bullet">-</span> 平台：[Windows / macOS / Linux]。</span><br><span class="line"></span><br><span class="line"><span class="section">## 沟通偏好</span></span><br><span class="line"><span class="bullet">-</span> 回复语言：中文为主，代码保留英文。</span><br><span class="line"><span class="bullet">-</span> 有实际影响的操作前，用 1–3 句说明思路再动手。</span><br><span class="line"><span class="bullet">-</span> 不要过度道歉，不要重复我说过的话。</span><br><span class="line"></span><br><span class="line"><span class="section">## 做事约束</span></span><br><span class="line"><span class="bullet">-</span> 不可逆操作先问我：删文件、git commit/push、装依赖、改配置。</span><br><span class="line"><span class="bullet">-</span> 不要主动装依赖，要装先告诉我装什么。</span><br><span class="line"></span><br><span class="line"><span class="section">## 讨厌行为</span></span><br><span class="line"><span class="bullet">-</span> 失败了却说完成。</span><br><span class="line"><span class="bullet">-</span> 每步都问要不要继续。</span><br><span class="line"><span class="bullet">-</span> 一次改一堆无关文件。</span><br></pre></td></tr></table></figure>
+
+<p>先从这个跑起来，用一两周之后再迭代。<strong>不要一开始就想写完美</strong>——你还不知道自己会被什么惹烦。</p>
+<hr>
+<h2 id="第二层：用好-memory（长期累积的具体事实）"><a href="#第二层：用好-memory（长期累积的具体事实）" class="headerlink" title="第二层：用好 memory（长期累积的具体事实）"></a>第二层：用好 memory（长期累积的具体事实）</h2><p>CLAUDE.md 回答”我是谁”，memory 回答”这件具体的事，以后要记住”。</p>
+<p>memory 存在 <code>~/.claude/memory/</code> 目录下，每条记忆是一个 Markdown 文件，带 frontmatter。索引在 <code>MEMORY.md</code>，Claude 每次会话都会读。</p>
+<h3 id="怎么触发"><a href="#怎么触发" class="headerlink" title="怎么触发"></a>怎么触发</h3><p>最简单的方式：直接跟 Claude 说 <strong>“记住这个”</strong> 或者 <strong>“这个以后要注意”</strong>。它会自动写进 memory。</p>
+<p>或者用斜杠命令 <code>/remember</code>。</p>
+<h3 id="什么值得存"><a href="#什么值得存" class="headerlink" title="什么值得存"></a>什么值得存</h3><p>按 memory 系统本身的分类：</p>
+<ul>
+<li><p><strong>user</strong>：你是谁的补充。角色、专长、口味偏好。</p>
+<ul>
+<li>例：<em>“我是产品经理不是工程师，看到代码需要多加解释”</em></li>
+</ul>
+</li>
+<li><p><strong>feedback</strong>：你对 Claude 行为的具体反馈。<strong>这个最有价值</strong>。</p>
+<ul>
+<li>例：<em>“我说’跑一下测试’时，指的是 pytest 不是 unittest，因为我的项目用 pytest”</em></li>
+<li>例：<em>“我讨厌你在总结里用 emoji，一个都不要用”</em></li>
+</ul>
+</li>
+<li><p><strong>project</strong>：某个项目的隐性知识。</p>
+<ul>
+<li>例：<em>“XX 项目的部署命令是 make deploy-prod，不要用 kubectl 直接改”</em></li>
+</ul>
+</li>
+<li><p><strong>reference</strong>：外部资源指针。</p>
+<ul>
+<li>例：<em>“公司的 API 文档在 confluence.xxx.com&#x2F;api”</em></li>
+</ul>
+</li>
+</ul>
+<h3 id="什么不该存"><a href="#什么不该存" class="headerlink" title="什么不该存"></a>什么不该存</h3><ul>
+<li>代码库里已经有的（README、注释、CLAUDE.md 写过的）</li>
+<li>只对本次对话有意义的临时信息</li>
+<li>会变的东西（”当前版本是 v1.2”——下周就错了）</li>
+</ul>
+<h3 id="一个好习惯"><a href="#一个好习惯" class="headerlink" title="一个好习惯"></a>一个好习惯</h3><p><strong>被 Claude 惹烦第二次的时候，让它记下来。</strong></p>
+<p>第一次可以当偶发，第二次就是模式。这时候说一句”以后都别这样，记下来”，它会存到 memory。下一次会话就不会犯了。</p>
+<hr>
+<h2 id="第三层：减少权限弹窗"><a href="#第三层：减少权限弹窗" class="headerlink" title="第三层：减少权限弹窗"></a>第三层：减少权限弹窗</h2><p>Claude Code 默认会在跑很多命令前弹窗问你”允许吗？”。刚开始这挺好——安全。但一旦你信任了自己的工作流，这些弹窗就变成噪音了。</p>
+<p><strong>最快的减噪方式</strong>：跑斜杠命令 <code>/fewer-permission-prompts</code>。</p>
+<p>它会扫你的历史命令，把常用的<strong>只读</strong>命令（<code>ls</code>、<code>git status</code>、<code>cat</code>、<code>grep</code> 等）加到 <code>.claude/settings.json</code> 的白名单里。写命令和危险命令仍然会问你——安全性没降。</p>
+<p>跑完立刻能感觉到差别。这是投入产出比最高的一步。</p>
+<hr>
+<h2 id="第四层：hooks（真正的自动化）"><a href="#第四层：hooks（真正的自动化）" class="headerlink" title="第四层：hooks（真正的自动化）"></a>第四层：hooks（真正的自动化）</h2><p>前面三层都是”让 Claude 更懂你”。这一层不一样——是<strong>让 Claude 能自动完成你需要的动作</strong>。</p>
+<p><strong>关键理解</strong>：Claude 自己不能”每次做完 X 就自动做 Y”。它没有那个能力——它只是回答你的对话。真正执行”每次自动”的是 Claude Code 这个 harness（宿主程序）。所以想自动化必须配 hook。</p>
+<p>如果你只在 memory 里写”每次编辑完 Python 文件自动 format”——<strong>不会生效</strong>。因为 Claude 读到这句话时，可能已经编辑完文件了，它没办法穿越回过去。</p>
+<p>hook 长这样（在 <code>~/.claude/settings.json</code> 里）：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;hooks&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;PostToolUse&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">      <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;matcher&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Edit|Write&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;hooks&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">          <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;command&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;if [[ \&quot;$CLAUDE_TOOL_INPUT_file_path\&quot; == *.py ]]; then ruff format \&quot;$CLAUDE_TOOL_INPUT_file_path\&quot;; fi&quot;</span></span><br><span class="line">          <span class="punctuation">&#125;</span></span><br><span class="line">        <span class="punctuation">]</span></span><br><span class="line">      <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>看起来复杂？用斜杠命令 <code>/update-config</code>，它会带你交互式地配置。</p>
+<h3 id="有用的-hook-场景"><a href="#有用的-hook-场景" class="headerlink" title="有用的 hook 场景"></a>有用的 hook 场景</h3><ul>
+<li>编辑完 Python 文件自动 <code>ruff format</code> &#x2F; <code>black</code></li>
+<li>编辑完 TypeScript 文件自动 <code>prettier --write</code></li>
+<li>编辑完 <code>.ps1</code> 自动跑 PowerShell 语法检查</li>
+<li>Claude 停下来的时候发桌面通知（防止你等半天没意识到它已经好了）</li>
+<li>每次 commit 前自动跑测试</li>
+</ul>
+<h3 id="什么时候别用-hook"><a href="#什么时候别用-hook" class="headerlink" title="什么时候别用 hook"></a>什么时候别用 hook</h3><ul>
+<li>你还不确定要不要自动化的时候——先手动做几次，模式清楚了再自动化</li>
+<li>每次都不一样的动作——那本来就不该自动化</li>
+<li>会影响其他工具正在做的事的动作（比如中途改文件让另一个程序困惑）</li>
+</ul>
+<hr>
+<h2 id="第五层：skills-和斜杠命令"><a href="#第五层：skills-和斜杠命令" class="headerlink" title="第五层：skills 和斜杠命令"></a>第五层：skills 和斜杠命令</h2><p>Claude Code 内置了一堆”技能包”，输入 <code>/</code> 能看到全部。我用得最多的：</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>干嘛的</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>/code-review</code></td>
+<td>审当前 diff，找 bug 和可以简化的地方</td>
+</tr>
+<tr>
+<td><code>/verify</code></td>
+<td>跑起来验证改动真的生效（不是只看类型对不对）</td>
+</tr>
+<tr>
+<td><code>/simplify</code></td>
+<td>清理改过的代码里的重复和啰嗦</td>
+</tr>
+<tr>
+<td><code>/deep-research</code></td>
+<td>深度调研任何话题，多来源交叉验证</td>
+</tr>
+<tr>
+<td><code>/init</code></td>
+<td>给新项目生成初始 CLAUDE.md</td>
+</tr>
+<tr>
+<td><code>/fewer-permission-prompts</code></td>
+<td>前面提过，减权限弹窗</td>
+</tr>
+<tr>
+<td><code>/update-config</code></td>
+<td>交互式改 settings.json（配 hook 用这个）</td>
+</tr>
+</tbody></table>
+<p>大部分斜杠命令<strong>不用记参数</strong>——直接敲上去，它会问你要什么。</p>
+<hr>
+<h2 id="一个推荐的上手顺序"><a href="#一个推荐的上手顺序" class="headerlink" title="一个推荐的上手顺序"></a>一个推荐的上手顺序</h2><p>如果你从零开始，我建议按这个顺序做，每一步产出立竿见影：</p>
+<p><strong>第 1 天</strong>（15 分钟）：</p>
+<ol>
+<li>写全局 CLAUDE.md，用上面那个最小模板。</li>
+<li>跑 <code>/fewer-permission-prompts</code>。</li>
+</ol>
+<p><strong>第 1 周</strong>：<br>3. 每次被 Claude 惹烦，把具体行为补到 CLAUDE.md 的”讨厌行为”清单。<br>4. 遇到需要”这个以后要记住”的时候，说”记住这个”。</p>
+<p><strong>第 2 周</strong>：<br>5. 有明确重复动作了，配一两个 hook。<br>6. 给最常用的项目建项目级 CLAUDE.md，把项目特有的命令和约定放进去。</p>
+<p><strong>长期</strong>：<br>7. 每一两个月回头看看 memory 和 CLAUDE.md，删掉过时的、合并重复的。</p>
+<p><strong>不要一开始就想配完美。</strong> 你还不知道自己真正的痛点在哪。让它跑，让它烦你，然后针对性地补——这才是最有效的路径。</p>
+<hr>
+<h2 id="常见误区"><a href="#常见误区" class="headerlink" title="常见误区"></a>常见误区</h2><p><strong>误区 1：CLAUDE.md 越长越好</strong></p>
+<p>不是。它每次都要加载进上下文，写得像本书反而稀释重点。3–5KB、覆盖高频场景就够。</p>
+<p><strong>误区 2：把偏好写进 memory 而不是 CLAUDE.md</strong></p>
+<p>memory 适合”具体事实”（某个项目的部署命令、某个 API 的怪癖），偏好和身份写 CLAUDE.md 更合适——每次都会加载。memory 是按相关性召回的，不保证每次都读到。</p>
+<p><strong>误区 3：期待 Claude 自动做 harness 层的事</strong></p>
+<p>“每次做完 X 就自动做 Y”——这类只能靠 hook。memory 里写没用。</p>
+<p><strong>误区 4：写玄学咒语</strong></p>
+<p>“请深呼吸再回答”、”想象你是一个 10x 工程师”——这些在 API 上有时有点点效果，但在 Claude Code 这种长时间任务型场景里几乎没有意义。<strong>具体行为规则</strong> &gt; <strong>人格 prompt</strong>。</p>
+<p><strong>误区 5：不敢改 settings.json</strong></p>
+<p>它就是个 JSON 文件。改坏了删掉重来就行。真怕的话先备份一份。别把它当成什么神秘配置。</p>
+<hr>
+<h2 id="尾声"><a href="#尾声" class="headerlink" title="尾声"></a>尾声</h2><p>让 Claude 更懂你这件事，没有一劳永逸的方法——你和你的工作习惯会一直变，Claude 会一直更新，配置也就一直要跟着调。</p>
+<p>但<strong>这件事的投入产出比高得离谱</strong>。花两小时把 CLAUDE.md 写好，接下来几个月每天省下的对话摩擦，加起来可能是几十小时。</p>
+<p>而且比省时间更重要的是——一个真的懂你的工具，用起来的感觉，跟一个通用工具是两回事。</p>
+<p>祝你调教顺利。</p>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/avatar.jpg" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/avatar.jpg" title="头像" alt="头像"></a><div class="post-copyright__author_name">许步鸢</div><div class="post-copyright__author_desc"></div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="https://www.xubuyuan.top/2026/07/11/%E8%AE%A9-claude-%E6%9B%B4%E6%87%82%E4%BD%A0/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('https://www.xubuyuan.top/2026/07/11/%E8%AE%A9-claude-%E6%9B%B4%E6%87%82%E4%BD%A0/')">让 Claude Code 更懂你：从零开始的个性化指南</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="https://www.xubuyuan.top/2026/07/11/%E8%AE%A9-claude-%E6%9B%B4%E6%87%82%E4%BD%A0/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=让 Claude Code 更懂你：从零开始的个性化指南&amp;url=https://www.xubuyuan.top/2026/07/11/%E8%AE%A9-claude-%E6%9B%B4%E6%87%82%E4%BD%A0/&amp;pic=https://t.alcy.cc/pc?_r_=5fd59be2-d985-da85-b853-fa8dd1822150" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.xubuyuan.top" target="_blank">青鸢之亭</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/Claude/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>Claude<span class="tagsPageCount">1</span></a><a class="post-meta__box__tags" href="/tags/%E6%95%88%E7%8E%87/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>效率<span class="tagsPageCount">1</span></a><a class="post-meta__box__tags" href="/tags/%E5%B7%A5%E5%85%B7/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>工具<span class="tagsPageCount">1</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="https://t.alcy.cc/pc?_r_=5fd59be2-d985-da85-b853-fa8dd1822150" data-sites="twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2026/05/30/HEXO%E6%8A%98%E8%85%BE%E6%97%A5%E8%AE%B0/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://t.alcy.cc/pc?_r_=2c3fc60b-2972-92a4-611f-08991e67b68e" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">HEXO折腾日记</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/08/24/64e6ce9c507bb.png" alt="status"/></div></div><div class="author-info__description">一个爱好开源的普通人的博客</div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/"><h1 class="author-info__name">许步鸢</h1><div class="author-info__desc"></div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/xubuyuan18" target="_blank" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="social-icon faa-parent animated-hover" href="https://space.bilibili.com/441828893" target="_blank" title="BiliBili"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%BB%98%E8%AE%A4%E7%9A%84-Claude-%E4%B8%8D%E5%A4%9F%E7%94%A8"><span class="toc-number">1.</span> <span class="toc-text">为什么默认的 Claude 不够用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E5%B1%82%EF%BC%9A%E5%86%99%E5%A5%BD-CLAUDE-md%EF%BC%88%E6%9C%80%E9%87%8D%E8%A6%81%EF%BC%8C%E5%8D%A0-80-%E6%95%88%E6%9E%9C%EF%BC%89"><span class="toc-number">2.</span> <span class="toc-text">第一层：写好 CLAUDE.md（最重要，占 80% 效果）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%A5%E5%86%99%E4%BB%80%E4%B9%88"><span class="toc-number">2.1.</span> <span class="toc-text">该写什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%A5%E9%81%BF%E5%85%8D%E4%BB%80%E4%B9%88"><span class="toc-number">2.2.</span> <span class="toc-text">该避免什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E6%9C%80%E5%B0%8F%E8%B5%B7%E6%AD%A5%E6%A8%A1%E6%9D%BF"><span class="toc-number">2.3.</span> <span class="toc-text">一个最小起步模板</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E5%B1%82%EF%BC%9A%E7%94%A8%E5%A5%BD-memory%EF%BC%88%E9%95%BF%E6%9C%9F%E7%B4%AF%E7%A7%AF%E7%9A%84%E5%85%B7%E4%BD%93%E4%BA%8B%E5%AE%9E%EF%BC%89"><span class="toc-number">3.</span> <span class="toc-text">第二层：用好 memory（长期累积的具体事实）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%8E%E4%B9%88%E8%A7%A6%E5%8F%91"><span class="toc-number">3.1.</span> <span class="toc-text">怎么触发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E5%80%BC%E5%BE%97%E5%AD%98"><span class="toc-number">3.2.</span> <span class="toc-text">什么值得存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E4%B8%8D%E8%AF%A5%E5%AD%98"><span class="toc-number">3.3.</span> <span class="toc-text">什么不该存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E5%A5%BD%E4%B9%A0%E6%83%AF"><span class="toc-number">3.4.</span> <span class="toc-text">一个好习惯</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E5%B1%82%EF%BC%9A%E5%87%8F%E5%B0%91%E6%9D%83%E9%99%90%E5%BC%B9%E7%AA%97"><span class="toc-number">4.</span> <span class="toc-text">第三层：减少权限弹窗</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E5%B1%82%EF%BC%9Ahooks%EF%BC%88%E7%9C%9F%E6%AD%A3%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8C%96%EF%BC%89"><span class="toc-number">5.</span> <span class="toc-text">第四层：hooks（真正的自动化）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%89%E7%94%A8%E7%9A%84-hook-%E5%9C%BA%E6%99%AF"><span class="toc-number">5.1.</span> <span class="toc-text">有用的 hook 场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E5%88%AB%E7%94%A8-hook"><span class="toc-number">5.2.</span> <span class="toc-text">什么时候别用 hook</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E5%B1%82%EF%BC%9Askills-%E5%92%8C%E6%96%9C%E6%9D%A0%E5%91%BD%E4%BB%A4"><span class="toc-number">6.</span> <span class="toc-text">第五层：skills 和斜杠命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E6%8E%A8%E8%8D%90%E7%9A%84%E4%B8%8A%E6%89%8B%E9%A1%BA%E5%BA%8F"><span class="toc-number">7.</span> <span class="toc-text">一个推荐的上手顺序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E8%AF%AF%E5%8C%BA"><span class="toc-number">8.</span> <span class="toc-text">常见误区</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%BE%E5%A3%B0"><span class="toc-number">9.</span> <span class="toc-text">尾声</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/07/11/%E8%AE%A9-claude-%E6%9B%B4%E6%87%82%E4%BD%A0/" title="让 Claude Code 更懂你：从零开始的个性化指南"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://t.alcy.cc/pc?_r_=5fd59be2-d985-da85-b853-fa8dd1822150" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="让 Claude Code 更懂你：从零开始的个性化指南"/></a><div class="content"><a class="title" href="/2026/07/11/%E8%AE%A9-claude-%E6%9B%B4%E6%87%82%E4%BD%A0/" title="让 Claude Code 更懂你：从零开始的个性化指南">让 Claude Code 更懂你：从零开始的个性化指南</a><time datetime="2026-07-11T12:35:47.000Z" title="发表于 2026-07-11 20:35:47">2026-07-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/05/30/HEXO%E6%8A%98%E8%85%BE%E6%97%A5%E8%AE%B0/" title="HEXO折腾日记"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://t.alcy.cc/pc?_r_=2c3fc60b-2972-92a4-611f-08991e67b68e" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HEXO折腾日记"/></a><div class="content"><a class="title" href="/2026/05/30/HEXO%E6%8A%98%E8%85%BE%E6%97%A5%E8%AE%B0/" title="HEXO折腾日记">HEXO折腾日记</a><time datetime="2026-05-30T02:38:09.000Z" title="发表于 2026-05-30 10:38:09">2026-05-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/04/30/Linux%20CVE-2026-31431/" title="Linux娘 CVE-2026-31431"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://t.alcy.cc/pc?_r_=ae2204fb-55dd-3842-ce01-872e995c0a1c" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux娘 CVE-2026-31431"/></a><div class="content"><a class="title" href="/2026/04/30/Linux%20CVE-2026-31431/" title="Linux娘 CVE-2026-31431">Linux娘 CVE-2026-31431</a><time datetime="2026-04-30T02:43:50.000Z" title="发表于 2026-04-30 10:43:50">2026-04-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/04/10/%E5%9F%BA%E4%BA%8EK8s%E8%8A%82%E7%82%B9RAG%E6%9C%AC%E5%9C%B0%E7%9F%A5%E8%AF%86%E5%BA%93%E9%97%AE%E7%AD%94%E7%B3%BB%E7%BB%9F/" title="我的毕设"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://t.alcy.cc/pc?_r_=09c68305-a453-c129-1c7a-e8e187975c42" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="我的毕设"/></a><div class="content"><a class="title" href="/2026/04/10/%E5%9F%BA%E4%BA%8EK8s%E8%8A%82%E7%82%B9RAG%E6%9C%AC%E5%9C%B0%E7%9F%A5%E8%AF%86%E5%BA%93%E9%97%AE%E7%AD%94%E7%B3%BB%E7%BB%9F/" title="我的毕设">我的毕设</a><time datetime="2026-04-10T03:43:50.000Z" title="发表于 2026-04-10 11:43:50">2026-04-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/06/01/%E5%8D%8E%E4%B8%BAICT%E6%AF%94%E8%B5%9B%E8%AE%B0%E5%BD%95/" title="华为ICT比赛记录"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://t.alcy.cc/pc?_r_=ff44b26d-f815-9b13-0a82-d80baeabdd6a" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="华为ICT比赛记录"/></a><div class="content"><a class="title" href="/2025/06/01/%E5%8D%8E%E4%B8%BAICT%E6%AF%94%E8%B5%9B%E8%AE%B0%E5%BD%95/" title="华为ICT比赛记录">华为ICT比赛记录</a><time datetime="2025-06-01T02:43:50.000Z" title="发表于 2025-06-01 10:43:50">2025-06-01</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div id="footer_deal"><a class="deal_link" href="mailto:3432150240@qq.com" title="email"><i class="anzhiyufont anzhiyu-icon-envelope"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://x.com/Nefelibata0718" title="X"><i class="anzhiyufont anzhiyu-icon-dove"></i></a><img class="footer_mini_logo" title="返回顶部" alt="返回顶部" onclick="anzhiyu.scrollToDest(0, 500)" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/avatar.jpg" size="50px"/><a class="deal_link" target="_blank" rel="noopener" href="https://github.com/xubuyuan18" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://space.bilibili.com/441828893" title="Bilibili"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo_v8.1.2" title="博客框架为Hexo_v8.1.2"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Frame-Hexo.svg" alt="博客框架为Hexo_v8.1.2"/></a><a class="github-badge" target="_blank" href="https://hexo.anheyu.com/" style="margin-inline:5px" data-title="本站使用AnZhiYu主题" title="本站使用AnZhiYu主题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.9/img/Theme-AnZhiYu-2E67D3.svg" alt="本站使用AnZhiYu主题"/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" data-title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.2.0/img/badge/Copyright-BY-NC-SA.svg" alt="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"/></a></p></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2020 - 2026 By <a class="footer-bar-link" href="/" title="许步鸢" target="_blank">许步鸢</a></div></div><div id="footer-type-tips"></div><div class="js-pjax"><script>function subtitleType () {
+  getScript('https://sdk.jinrishici.com/v2/browser/jinrishici.js').then(() => {
+    jinrishici.load(result =>{
+      if (true) {
+        const sub = []
+        const content = result.data.content
+        sub.unshift(content)
+        window.typed = new Typed('#footer-type-tips', {
+          strings: sub,
+          startDelay: 300,
+          typeSpeed: 150,
+          loop: true,
+          backSpeed: 50,
+        })
+      } else {
+        document.getElementById('footer-type-tips').innerHTML = result.data.content
+      }
+    })
+  })
+}
+
+if (true) {
+  if (typeof Typed === 'function') {
+    subtitleType()
+  } else {
+    getScript('https://cdn.cbd.int/typed.js@2.1.0/dist/typed.umd.js').then(subtitleType)
+  }
+} else {
+  subtitleType()
+}
+</script></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="本站主题">本站主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">8</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">4</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">相关站点</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="http://File.xubuyuan.top" title="OpenList"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="OpenList"/><span class="back-menu-item-text">OpenList</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="http://1p.xubuyuan.top" title="1Panel"><img class="back-menu-item-icon" alt="1Panel"/><span class="back-menu-item-text">1Panel</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="http://agent.xubuyuan.top" title="Agent"><img class="back-menu-item-icon" alt="Agent"/><span class="back-menu-item-text">Agent</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="http://38.244.14.227:20344" title="3XUI"><img class="back-menu-item-icon" alt="3XUI"/><span class="back-menu-item-text">3XUI</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="http://note.xubuyuan.top" title="Obsidian"><img class="back-menu-item-icon" alt="Obsidian"/><span class="back-menu-item-text">Obsidian</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">我的项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://github.com/xubuyuan18/dms-plugin-Lyrics" title="DMS-Lyrics"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="DMS-Lyrics"/><span class="back-menu-item-text">DMS-Lyrics</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/archives/"><span> 归档</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/categories/"><span> 分类</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/tags/"><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番列表</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/equipment/"><i class="anzhiyufont anzhiyu-icon-keyboard faa-tada" style="font-size: 0.9em;"></i><span> 装备列表</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:toRandomPost()"><span> 随便逛逛</span></a></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Claude/" style="font-size: 0.88rem;">Claude<sup>1</sup></a><a href="/tags/K8s/" style="font-size: 0.88rem;">K8s<sup>1</sup></a><a href="/tags/kvm/" style="font-size: 0.88rem;">kvm<sup>1</sup></a><a href="/tags/llm/" style="font-size: 0.88rem;">llm<sup>1</sup></a><a href="/tags/note/" style="font-size: 0.88rem;">note<sup>3</sup></a><a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 0.88rem;">工具<sup>1</sup></a><a href="/tags/%E6%8A%98%E8%85%BE/" style="font-size: 0.88rem;">折腾<sup>3</sup></a><a href="/tags/%E6%95%88%E7%8E%87/" style="font-size: 0.88rem;">效率<sup>1</sup></a><a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 0.88rem;">笔记<sup>1</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="2792934213" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="anzhiyufont anzhiyu-icon-xmark"></i></button></nav><div class="is-center" id="loading-database"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-pulse-icon"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://music.163.com/#/playlist?id=2792934213&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@6.1.6/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("06/01/2024 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2020 By 安知鱼 V1.7.1",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 许步鸢 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><input type="hidden" name="page-type" id="page-type" value="post"></div><script async data-pjax src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.1/bubble/bubble.js"></script><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://cdn.cbd.int/qrcodejs@1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/fireworks.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
