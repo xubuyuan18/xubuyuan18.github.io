@@ -3,8 +3,6 @@ name: Build and Deploy
 on:
   push:
     branches: [main]
-  repository_dispatch:
-    types: [articles-updated]
 
 permissions:
   contents: write
@@ -14,21 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Sync posts from blog repo
-        if: github.event_name == 'repository_dispatch'
-        run: |
-          git clone https://github.com/xubuyuan18/blog.git /tmp/blog
-          git rm -r source/_posts/ 2>/dev/null || true
-          mkdir -p source/_posts/
-          cp /tmp/blog/*.md source/_posts/
-          rm -rf /tmp/blog
-          git add source/_posts/
-          git diff --cached --quiet && echo "No changes" || (
-            git config user.name "github-actions" &&
-            git config user.email "github-actions@github.com" &&
-            git commit -m "sync: update posts from blog"
-          )
 
       - uses: actions/setup-node@v4
         with:
@@ -50,7 +33,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           publish_branch: gh-pages
-
-      - name: Push source changes back to main
-        if: github.event_name == 'repository_dispatch'
-        run: git push
