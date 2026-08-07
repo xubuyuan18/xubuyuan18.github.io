@@ -3,7 +3,7 @@ title: Linux娘救援行动：GRUB2换主题踩坑记
 tags:
   - 折腾
 categories: Linux
-abbrlink:
+abbrlink: 25431
 date: 2024-03-21 19:43:50
 ---
 # Linux娘救援行动：GRUB2换主题踩坑记

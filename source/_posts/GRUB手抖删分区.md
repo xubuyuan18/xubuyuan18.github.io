@@ -2,7 +2,7 @@
 title: Linux娘救援行动：GRUB手抖删分区
 tags: note
 categories: Linux
-abbrlink:
+abbrlink: 65416
 date: 2024-06-20 10:43:50
 ---
 # Linux娘救援行动

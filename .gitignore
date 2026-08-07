@@ -1,5 +1,6 @@
 .DS_Store
 Thumbs.db
+.obsidian/
 db.json
 *.log
 node_modules/
