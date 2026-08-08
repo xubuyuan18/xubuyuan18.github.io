@@ -39,5 +39,5 @@ jobs:
           REMOTE_USER: ${{ secrets.VPS_USER }}
           REMOTE_PORT: 22
           SOURCE: "public/"
-          TARGET: "/www/sites/blog/index/public/"
+          TARGET: "/opt/1panel/www/sites/blog/index/public/"
           ARGS: "-rlgoDzvc -i --delete"
